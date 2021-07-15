@@ -3,7 +3,7 @@
 
 Azure Synapse Analytics is an integrated analytics platform, which combines data warehousing, big data analytics, data integration, and visualization into a single environment. 
 
-
+This implements a data warehouse using a dedicated SQL pool that leverages the Massively Parallel Processing engine that brings together enterprise data warehousing and Big Data analytics.
 
 
 ## Implement a Data Warehouse with Azure Synapse Analytics
@@ -32,15 +32,26 @@ Azure Synapse Analytics is designed to simplify this process with limitless scal
  
 # Describe a Modern Data Warehouse
 
-A modern data warehouse lets you bring together all your data at any scale easily
+A modern data warehouse lets you bring together all your data at any scale easily.
 
-you can get insights through analytical dashboards, operational reports, or advanced analytics for all your users.
-
-The pace of change in both the capabilities of technologies, and the elastic nature of cloud services has meant that new opportunities have been presented to evolve the data warehouse to handle modern workloads including::
-
-Increased volumes of data
+You can get insights through analytical dashboards, operational reports, or advanced analytics for all your users.
 
 ## Define a Modern Data Warehouse Architecture
+
+The process of building a modern data warehouse typically consists of:
+
+1. Data Ingestion and Preparation.
+
+customers build a data lake to store all their data and different data types with Azure Data Lake Store Gen2.
+
+To ingest data, customers can do so code-free with over 100 data integration connectors with Azure Data Factory. 
+
+
+
+2. Making the data ready for consumption by analytical tools.
+
+3. Providing access to the data, in a shaped format so that it can easily be consumed by data visualization tools.
+
 
 ## Design ingestion patterns for a Modern Data Warehouse
 
@@ -49,6 +60,19 @@ Increased volumes of data
 ## Prepare and transform data with Azure Synapse Analytics
 
 ## Serve data for analysis with Azure Synapse Analytics
+
+
+
+# [DISTRIBUTED TABLES](https://docs.microsoft.com/en-us/azure/synapse-analytics/sql-data-warehouse/sql-data-warehouse-tables-distribute)
+
+|| processing of queries - distribute data so that || queries can run on them
+
+![image](https://user-images.githubusercontent.com/68102477/125714710-2dc139f7-b7b3-46c5-b7ba-703946e76555.png)
+
+# RESULT SET CACHING
+
+![image](https://user-images.githubusercontent.com/68102477/125714926-473230e9-8f08-49a3-945a-480eb0f5fd4b.png)
+
 
 
 
