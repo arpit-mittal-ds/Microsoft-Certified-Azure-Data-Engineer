@@ -17,3 +17,5 @@ Massively Parallel Processing architecture at limitless scale
 
 ![image](https://user-images.githubusercontent.com/68102477/125708286-328ebb4a-5e37-4ecc-a4ff-f060201ece24.png)
 
+![image](https://user-images.githubusercontent.com/68102477/125709001-53db38d2-c6d3-4fe9-9d03-c3e8edcec0bc.png)
+
