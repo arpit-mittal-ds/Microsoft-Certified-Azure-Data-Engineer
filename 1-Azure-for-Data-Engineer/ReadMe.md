@@ -15,6 +15,17 @@ Outline how the role of the data professional is changing in organizations.
 Identify use cases that involve these changes.
 
 
+## Tasks of an Azure data engineer:
+
+* Design and develop data storage and data processing solutions for the enterprise.
+* Set up and deploy cloud-based data services such as blob services, databases, and analytics.
+Secure the platform and the stored data. Make sure only the necessary users can access the data.
+Ensure business continuity in uncommon conditions by using techniques for high availability and disaster recovery.
+Monitor to ensure that the systems run properly and are cost-effective.
+
+
+
+
 
 
 
