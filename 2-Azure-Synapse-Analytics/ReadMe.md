@@ -146,10 +146,10 @@ WORKLOAD MANAGEMENT -
 
 ### PASTE THE EXPLAIN PLAN IN THE NEW XML FILE
 
+![image](https://user-images.githubusercontent.com/68102477/128830954-5333fab1-11cf-4b13-bbe8-d8688c3fdecf.png)
 
-![image](https://user-images.githubusercontent.com/68102477/128813282-20cf3569-0033-4463-891c-aab68bd91166.png)
+![image](https://user-images.githubusercontent.com/68102477/128830896-7f4f1e60-27f7-495d-a5b3-d2d85cd7b9a6.png)
 
-![image](https://user-images.githubusercontent.com/68102477/128813365-038a3480-4907-475f-8081-6972db7bbe94.png)
 
 ### BROADCAST VS SHUFFLE - BOTH ARE BAD FOR PERFORMANCE
 ### SHUFFLE - TAKE THE RECORD AND MOVE IT TO ANOTHER NODE
@@ -172,12 +172,11 @@ WORKLOAD MANAGEMENT -
 ### DATBASE IS HENCE SHUFFLING FOR THE JOIN
 ### LET'S REDISTRIBUTE AND USE HASH DISTRIBUTION
 
-![image](https://user-images.githubusercontent.com/68102477/128814351-6145913d-97d2-4c2e-8c68-9e8a9f258da6.png)
+![image](https://user-images.githubusercontent.com/68102477/128830308-a2495500-de90-4bd7-b067-abb0d929652d.png)
 
 ### AFTER REFERRING EXPLAIN PLAN AND THEN AVOIDING SHUFFLE AND BROADCAST WE WERE ABLE TO IMPROVE THE QUERY PERFORMANCE
 
-![image](https://user-images.githubusercontent.com/68102477/128814622-4709b32c-6c69-4311-94d1-abb9144616e0.png)
-
+![image](https://user-images.githubusercontent.com/68102477/128830245-a8cf0d94-2f02-4e94-a019-4e8a716311ac.png)
 
 
 
