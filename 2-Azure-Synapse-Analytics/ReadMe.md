@@ -125,7 +125,64 @@ WORKLOAD MANAGEMENT -
 
 ### DIAGNOSTIC TOOLS
 
-![image](https://user-images.githubusercontent.com/68102477/128812151-013c3a15-0316-4a49-a4ed-228b169cf3e5.png)
+![image](https://user-images.githubusercontent.com/68102477/128812397-e7094d21-8730-4836-ae8a-fa6bbcf85743.png)
+
+
+### EXPLAIN PLAN
+
+### DSQL - DISTRIBUTED SQL GETS GENERATED INTERNALLY BY SYNPASE AFTER OPTIMIZING THE QUERIES
+### NEEDS 
+
+![image](https://user-images.githubusercontent.com/68102477/128812445-9d0b6e97-c6a4-4175-9304-5732297759ce.png)
+
+### LABEL = TO GET THE PARTICULAR QUERY EXPLAIN PLAN
+![image](https://user-images.githubusercontent.com/68102477/128812863-5015074b-3f8e-423b-b6c6-2cc585e96323.png)
+
+![image](https://user-images.githubusercontent.com/68102477/128813117-f71fe208-a515-43d9-b77b-7d60e5e47b81.png)
+
+### GET THE EXPLAIN PLAN OF THE QUERY
+
+![image](https://user-images.githubusercontent.com/68102477/128813255-d50ae3f1-277a-4cc6-b1b1-c89bb33388ef.png)
+
+### PASTE THE EXPLAIN PLAN IN THE NEW XML FILE
+
+
+![image](https://user-images.githubusercontent.com/68102477/128813282-20cf3569-0033-4463-891c-aab68bd91166.png)
+
+![image](https://user-images.githubusercontent.com/68102477/128813365-038a3480-4907-475f-8081-6972db7bbe94.png)
+
+### BROADCAST VS SHUFFLE - BOTH ARE BAD FOR PERFORMANCE
+### SHUFFLE - TAKE THE RECORD AND MOVE IT TO ANOTHER NODE
+### BROADCAST_MOVE - CAUSE - DATATYPES OF THE COLUMNS DO NOT MATCH IN THE JOIN/COMPARISON CONDITION (REQUIRES CONVERSION) OR REPLICATION HAS NOT YET HAPPENED 
+![image](https://user-images.githubusercontent.com/68102477/128813500-9cbed675-fc98-4ea1-8877-2743fca32b2e.png)
+
+### WE WERE JOINING MEDALLION AND TRIP TABLES
+### WE CAN NOTICE THAT THE DATATYPE OF THE COLUMNS ON WHICH WE ARE JOINING (HENCE COMPARING) TABLES, IS NOT SAME.
+![image](https://user-images.githubusercontent.com/68102477/128813852-f5c32c2d-d9a5-47b4-be17-24bc1b9d98b0.png)
+
+
+### HENCE LET'S DO TYPECASETING
+
+![image](https://user-images.githubusercontent.com/68102477/128814133-2f7bf4d6-62d9-4258-b5f9-d781aa1720dc.png)
+
+### BROADCAST_MOVE HAS NOW 
+![image](https://user-images.githubusercontent.com/68102477/128813978-7bd99ced-7a5d-4a2b-aa79-fb4c9e698a7e.png)
+
+### THE 2 TBALES ARE ROUND ROBIN
+### DATBASE IS HENCE SHUFFLING FOR THE JOIN
+### LET'S REDISTRIBUTE AND USE HASH DISTRIBUTION
+
+![image](https://user-images.githubusercontent.com/68102477/128814351-6145913d-97d2-4c2e-8c68-9e8a9f258da6.png)
+
+
+
+
+
+
+
+
+
+
 
 
 
