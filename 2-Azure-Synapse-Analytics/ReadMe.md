@@ -80,6 +80,12 @@ To ingest data, customers can do so code-free with over 100 data integration con
 
 # SYNAPSE TUNING 
 
+* Synapse has an [MPP (Massive Parallel Processing) architecture](https://docs.microsoft.com/en-us/azure/synapse-analytics/sql/overview-architecture)
+* So when you hear "nodes", these are the ones that do the compute for your queries.
+* So the aim here is to distribute data across your cluster (eg paralell) to maximise performance.
+
+There are 3 ways to distribute your data across these nodes
+
 ![image](https://user-images.githubusercontent.com/68102477/128811240-479b037a-a29a-400a-b63b-824b0c0c66aa.png)
 
 ![image](https://user-images.githubusercontent.com/68102477/128811289-cb5f69e0-f259-40d9-92b1-45fd1ff713d2.png)
