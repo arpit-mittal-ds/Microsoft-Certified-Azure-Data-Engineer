@@ -123,7 +123,10 @@ WORKLOAD MANAGEMENT -
 
 ![image](https://user-images.githubusercontent.com/68102477/128812035-c15ebc8b-e69a-48fa-bc4c-bc28564b3961.png)
 
-### 
+### DIAGNOSTIC TOOLS
+
+![image](https://user-images.githubusercontent.com/68102477/128812151-013c3a15-0316-4a49-a4ed-228b169cf3e5.png)
+
 
 
 
