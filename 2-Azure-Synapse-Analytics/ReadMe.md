@@ -75,5 +75,63 @@ To ingest data, customers can do so code-free with over 100 data integration con
 
 
 
+-----------
+
+
+# SYNAPSE TUNING 
+
+![image](https://user-images.githubusercontent.com/68102477/128811240-479b037a-a29a-400a-b63b-824b0c0c66aa.png)
+
+![image](https://user-images.githubusercontent.com/68102477/128811289-cb5f69e0-f259-40d9-92b1-45fd1ff713d2.png)
+
+### MAIN TOPICS FOR PERFORMANCE TUNING
+STRUCTURE - HEAP OR CLUSTERED
+STATISTICS - HOW DATABASE KNOWS WHICH ROWS ARE WHERE
+DATATYPES - 
+WORKLOAD MANAGEMENT - 
+![image](https://user-images.githubusercontent.com/68102477/128811328-0428d0d7-f0ce-4293-aef4-141fabfe062b.png)
+
+### HEAP TABLES ARE FASTER FOR etl 
+### CCI TABLES ARE BEST FOR QUERY PERFORMANCE
+
+![image](https://user-images.githubusercontent.com/68102477/128811461-c50ee90a-0ee6-47d9-bc7b-227cc0f0d91c.png)
+
+### SKEWED DISTRIBUTION - WHERE MOST OF THE ROWS ARE ON FEW NODES - DATA IS NOT EVENLY DISTRIBUTED BETWEEN NODES
+### DISTRIBUTION - ROUND ROBIN 
+### REPLICATED 
+### HASH IS BEST FOR PERFORMANCE
+
+![image](https://user-images.githubusercontent.com/68102477/128811572-4e42a40e-eecf-49d9-ab61-fce72532cbc3.png)
+
+![image](https://user-images.githubusercontent.com/68102477/128811726-57da1a01-ae47-4aa7-a6ec-c16b572d1db4.png)
+
+### ELIMINATING SHUFFLING
+![image](https://user-images.githubusercontent.com/68102477/128811757-e9c61b0c-3c98-4916-b1dc-8a46936e3ed0.png)
+
+### SHUFFLING - MOVING DATA 
+### VERY COSTLY
+![image](https://user-images.githubusercontent.com/68102477/128811816-e7eb2a1f-ec11-4c80-9363-66622067e6f5.png)
+
+### BY JUST CHANGING THE DISTRIBUTION 
+![image](https://user-images.githubusercontent.com/68102477/128811882-a539abb0-9be4-4c0e-9a93-9272cab0fa78.png)
+
+### SHUFFLE AND BROADCAST HAPPENING ON REPLICATED TABLES - SHOULD NEVER HAPPEN
+
+![image](https://user-images.githubusercontent.com/68102477/128811950-f4e7bf80-4289-49f5-9891-b714656e7cbd.png)
+
+### ROUND ROBIN 
+
+![image](https://user-images.githubusercontent.com/68102477/128812035-c15ebc8b-e69a-48fa-bc4c-bc28564b3961.png)
+
+### 
+
+
+
+
+
+
+
+
+
 
 
