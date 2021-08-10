@@ -5,11 +5,7 @@
 
 ![image](https://user-images.githubusercontent.com/68102477/128795342-4d717402-baa9-4d33-b02f-e0a05081b2a2.png)
 
-### CONNECT TO SYNAPSE USING VISUAL STUDIO
-
-![image](https://user-images.githubusercontent.com/68102477/128795438-c501ddd8-aa3e-4bfc-a406-14620c062b64.png)
-
-### EXPAND EXTERNAL TABLES 
+### CONNECT TO SYNAPSE USING VISUAL STUDIO AND EXPAND EXTERNAL TABLES 
 
 * USING EXTERNAL TABLES, POLYBASE ALLOWS TO ACCESS AND QUERY DATA STORED OUTSIDE DATABASE
 
@@ -23,8 +19,6 @@
 
 * CREATE MASTER KEY IN SYNAPSE AND CREATE DATABSE SCOPED CREDENTIAL
 
-![image](https://user-images.githubusercontent.com/68102477/128795720-6c633fd5-e9d7-4978-8c76-729d2aa9e60d.png)
-
 ![image](https://user-images.githubusercontent.com/68102477/128795773-284683b1-0c72-42fb-953d-43c7f80ebb3a.png)
 
 ### STEP 2 - CREATE EXTERNAL DATA SOURCE 
@@ -34,5 +28,26 @@
 
 ![image](https://user-images.githubusercontent.com/68102477/128795994-0253b475-0d97-4539-b6f9-a410cdb1fc5b.png)
 
-### STEP 3 - 
+### STEP 3 - CREATE EXTERNAL FILE FORMAT
+
+* TO SPECIFY THE LAYOUT OF THE DATA - IN THIS CASE - COMMA SEPARATED FILE
+
+![image](https://user-images.githubusercontent.com/68102477/128796626-0684c07c-866a-4afa-9b44-6a9d091c4e07.png)
+
+
+### STEP 4 - CREATE EXTERNAL TABLE
+
+* SPECIFY LOCATION - DIRECTORY WHERE THE FILE RESIDES IN AZURE BLOB
+
+![image](https://user-images.githubusercontent.com/68102477/128796748-2192b88a-7172-4144-ad5a-a55da59e436b.png)
+
+
+### STEP 5 - LOAD THE DATA TO SYNAPSE
+
+![image](https://user-images.githubusercontent.com/68102477/128796847-e6fb5046-aedb-4327-86ff-c390d1d75082.png)
+
+
+
+
+
 
