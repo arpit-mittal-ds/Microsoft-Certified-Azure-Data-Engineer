@@ -6,6 +6,37 @@ Azure Synapse Analytics is an integrated analytics platform, which combines data
 This implements a data warehouse using a dedicated SQL pool that leverages the Massively Parallel Processing engine that brings together enterprise data warehousing and Big Data analytics.
 
 
+## How Azure Synapse Analytics works
+
+Azure Synapse SQL is a distributed query system that enables you to implement data warehousing using standard T-SQL familiar to data engineers.
+
+Azure Synapse SQL is a distributed query system that enables you to implement data warehousing and data virtualization scenarios using standard T-SQL experiences familiar to data engineers.
+
+Azure Synapse Studio  - Web UI to be able to access all Azure Synapse Analytics capabilities
+
+
+## Create Azure Synapse Analytics workspace
+
+This deployment creates several resources which include an **Azure Data Lake Storage Gen2 account that acts as the primary storage and the container to store workspace data. **
+
+The **workspace stores data in Apache Spark tables.... ??** It also stores Spark application logs under a folder called /synapse/workspacename. There are endpoints created that can be used to connect to the SQL on-demand service, and the Azure Synapse Analytics Workspace itself.
+
+Azure Synapse Analytics enables you to create **pools, either SQL pools, or Spark pools** within the workspace that can be seamlessly mixed and matched based on your requirements.   It is able to do this through Azure Synapse Analytics shared metadata, which enables the different engines to share databases and tables.
+
+
+For example, A shared Hive-compatible metadata system allows tables defined on files in the data lake to be seamlessly consumed by either Spark or Hive. SQL and Spark can directly explore and analyze Parquet, CSV, TSV, and JSON files stored in the data lake. 
+
+![image](https://user-images.githubusercontent.com/68102477/129020246-95fb7163-a5e0-4a74-ba75-cd5763e4a6b4.png)
+
+![image](https://user-images.githubusercontent.com/68102477/129021135-5fd813bc-c787-41ed-97b6-a5f1c2e02efe.png)
+
+
+
+
+
+
+
+
 ## Implement a Data Warehouse with Azure Synapse Analytics
 
 A data warehouse is a centralized relational database that integrates data from one or more disparate sources. 
