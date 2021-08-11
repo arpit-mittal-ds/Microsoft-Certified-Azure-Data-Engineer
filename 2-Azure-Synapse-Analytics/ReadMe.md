@@ -28,11 +28,47 @@ For example, A shared Hive-compatible metadata system allows tables defined on f
 
 ![image](https://user-images.githubusercontent.com/68102477/129020246-95fb7163-a5e0-4a74-ba75-cd5763e4a6b4.png)
 
+### You need to select a Data Lake Storage Gen2 account and a container in that account to create a workspace.
+
 ![image](https://user-images.githubusercontent.com/68102477/129021135-5fd813bc-c787-41ed-97b6-a5f1c2e02efe.png)
 
 
+[How to set up access control for your Synapse workspace](https://docs.microsoft.com/en-gb/azure/synapse-analytics/security/how-to-set-up-access-control?WT.mc_id=Portal-Microsoft_Azure_Synapse)
+
+Data in a data warehouse is stored in permanent tables that are populated using an extract, transform, and load (ETL) process by services such as Azure Synapse pipelines, or Azure Data Factory. As a result, you need to understand the data that is stored in the sources systems, how it should arrive within the data warehouse, which in turn dictates how you should cleanse or transform the data.
+
+Dedicated SQL pools represent a collection of analytic resources that are being provisioned when using Synapse SQL. When you need predictable performance and cost, creating dedicated SQL pools to reserve processing power for data permanently stored in SQL tables in a data warehouse is the best approach to take.
+
+The serverless model is ideal for unplanned or ad hoc workloads that the diagnostic analytics approach would generate.
+
+### Apache Spark in Azure Synapse Analytics
+
+Big data workloads are defined as workloads to handle data that is too large or complex for traditional database systems. Apache Spark processes large amounts of data in memory, which boosts the performance of analyzing big data more effectively, and this capability is available within Azure Synapse Analytics, and is referred to as Spark pools.
+
+To achieve this capability, Spark pool clusters are groups of computers that are treated as a single computer and handle the execution of commands issued from notebooks. The clusters allow processing of data to be parallelized across many computers to improve scale and performance. It consists of a Spark Driver and Worker nodes. The Driver node sends work to the Worker nodes and instructs them to pull data from a specified data source. Moreover, you can configure the number of nodes that are required to perform the task.
+
+**Support for Azure Data Lake Storage Generation 2**
+
+Spark pools in Azure Synapse can use Azure Data Lake Storage Generation 2 as well as BLOB storage.
+
+The primary use case for Apache Spark for Azure Synapse Analytics is to process big data workloads that cannot be handled by Azure Synapse SQL, and where you don’t have an existing Apache Spark implementation.
+
+Perhaps you must perform a complex calculation on large volumes of data. Handling this requirement in Spark pools will be far more efficient than in Synapse SQL. You can pass the data through to the Spark cluster to perform the calculation, and then pass the processed data back into the data warehouse, or back to the data lake.
+
+If you already have a Spark implementation in place already, Azure Synapse Analytics can also integrate with other Spark implementations such as Azure Databricks, so you don’t have to use the feature in Azure Synapse Analytics if you already have a Spark setup already.
+
+So 3 options - Synapse SQL, Synapse Spark Pools, Azure Databricks.
+
+### [Create pools(sql pool or spark pool) in Azure Synapse Analytics](https://docs.microsoft.com/en-gb/learn/modules/survey-components-of-azure-synapse-analytics/6-exercise-create-pools)
 
 
+
+### Apache Spark architecture
+
+![image](https://user-images.githubusercontent.com/68102477/129022367-92e8ae53-8c37-445f-8c95-b256bce935ab.png)
+
+
+Spark pools in Azure Synapse Analytics offer a fully managed Spark service. The benefits of creating a Spark pool in Synapse Analytics include.
 
 
 
