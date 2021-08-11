@@ -65,6 +65,11 @@ From a consumer perspective, it represents a single storage technology—the
 “fabric” on which the data persists. Examples of data fabrics in Azure are SQL,
 Azure Data Explorer, Blob Storage, and so forth.
 
+* Upstream
+systems are systems from which we ingest data into our platform. 
+
+* Downstream
+systems are systems that consume data from our data platform.
 
 Different teams in
 an organization uses different
@@ -94,6 +99,52 @@ might be overkill, so we can park the data in a cheap storage like Azure Data La
 Storage
 
 ![image](https://user-images.githubusercontent.com/68102477/129006996-734aa307-e384-4f78-9696-4867689f3f8d.png)
+
+## INGESTION
+
+### Having a single source of truth
+
+While we should embrace supporting multiple data fabrics, there is value in having a
+“single source of truth”—one storage solution through which all data in the system
+flows. Figure 2.4 shows Azure Data Explorer as such a single source of truth for our
+data platform.
+
+![image](https://user-images.githubusercontent.com/68102477/129009592-0698ed6c-ab23-4054-a8d5-565a3121b8e9.png)
+
+a data issue upstream.
+Once the issue is identified and corrected, we need to re-ingest the data. The single
+source of truth helps because once we know the data has been updated there, the
+updates flow seamlessly throughout the system. Contrast this with a setup in which various datasets land in different data fabrics. We would have to track the data flow of a
+single dataset to make sure a fix is propagated correctly.
+ The trade-off to be aware of is that the more data we move around, the more
+latency and costs we incur and the more failure points we introduce into the system.
+For example, if we ingest data from the payments team into Azure Data Explorer, then
+we copy it to Azure Data Lake Storage, either of the steps could fail; we might run into
+an issue ingesting into Azure Data Explorer, or we might run into an issue copying
+into Azure Data Lake Storage. If we ingest the data directly into Azure Data Lake Storage, we have just one failure point, although it will be harder to tie this data together
+with the data available in Azure Data Explorer. We need to find the right balance
+between placing the data in the optimal storage solution for the processing we are trying to do and for keeping things at a reasonable cost and complexity level.
+
+## Azure Data Explorer
+
+Azure Data Explorer is a fast, fully managed data analytics service for analysis on large
+volumes of data
+
+### Deploying an Azure Data Explorer cluster
+
+We’ll use Azure CLI to set up an Azure Data Explorer cluster 
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
