@@ -44,9 +44,56 @@ If you are performing analytics on the data, set up the storage account as an Az
 
 [Examine uses for Azure Data Lake Storage Gen2](https://docs.microsoft.com/en-us/learn/modules/introduction-to-azure-data-lake-storage/6-use-cases)
 
+# STORAGE
+
+Storage is the
+core piece of a data platform
+around which everything else
+is built. Data gets ingested
+into the storage layer and is
+distributed from there. All
+workloads (data processing,
+analytics, and machine
+learning) access this layer.
+
+### DEFINITIONS
+
+* A dataset is a collection of data. In the case of tabular data, a dataset corresponds to one or more tables.
+
+* A data fabric is an environment for storing and managing data.
+From a consumer perspective, it represents a single storage technology—the
+“fabric” on which the data persists. Examples of data fabrics in Azure are SQL,
+Azure Data Explorer, Blob Storage, and so forth.
 
 
+Different teams in
+an organization uses different
+technologies to store data.
 
+Example - The
+website team uses Azure Data
+Explorer, the payments team
+uses Azure SQL, while the
+customer success team uses a
+third-party solution from which
+we can get data via an API.
+So in this example, a data platform needs
+to stitch together data from multiple fabrics.
+
+A large data platform needs to accommodate heterogenous data
+storage. By heterogenous data storage, we mean data spread across multiple data fabrics.
+
+We need to embrace having data across multiple storage solutions, not only for ingestion. Different workloads might perform better on different data fabrics 
+
+ For example, Azure Data Explorer excels at querying millions
+of rows in a matter of seconds, which identifies anomalies or produces aggregates.
+Suppose we want to keep a large amount of data for historical reasons or simply to
+allow other teams within our enterprise to copy the data to their systems. In this case,
+Azure Data Explorer with its high-performance indexing and caching capabilities
+might be overkill, so we can park the data in a cheap storage like Azure Data Lake
+Storage
+
+![image](https://user-images.githubusercontent.com/68102477/129006996-734aa307-e384-4f78-9696-4867689f3f8d.png)
 
 
 
