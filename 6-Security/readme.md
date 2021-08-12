@@ -90,6 +90,8 @@ There are a few ways to connect your existing Active Directory installation with
 
 ![image](https://user-images.githubusercontent.com/68102477/129122479-18b69377-00f7-4196-b766-5a2464d1a05e.png)
 
+### Azure Resource Manager (ARM) - ARM Templates
+![image](https://user-images.githubusercontent.com/68102477/129136394-b4bbbe2a-1edc-4ef3-be48-a8f211b5f1c2.png)
 
 
 
