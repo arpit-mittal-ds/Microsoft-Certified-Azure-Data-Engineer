@@ -71,7 +71,27 @@ There are a few ways to connect your existing Active Directory installation with
 
 ![image](https://user-images.githubusercontent.com/68102477/129120729-70b6703c-1ff2-441b-bee1-23d123fe0b92.png)
 
-![Uploading image.png…]()
+![image](https://user-images.githubusercontent.com/68102477/129121244-6c814e39-6068-4d6c-8beb-56dc2c413b49.png)
+
+## COMMAND LINE TOOLS (BASH OR POWERSHELL)
+
+![image](https://user-images.githubusercontent.com/68102477/129121314-e18bdeb0-ba23-4a30-b48e-4d3d1e04ed40.png)
+
+![image](https://user-images.githubusercontent.com/68102477/129121414-aadc3740-8746-425c-928b-9a957c5f069f.png)
+
+![image](https://user-images.githubusercontent.com/68102477/129121669-d735e59f-3d11-4dfa-81a4-03390a7d479a.png)
+
+### Azure Resource Group 
+
+* A logical grouping of few resources on Azure which share the same lifecycle.
+
+
+### Azure Subscription
+
+![image](https://user-images.githubusercontent.com/68102477/129122479-18b69377-00f7-4196-b766-5a2464d1a05e.png)
+
+
+
 
 
 
