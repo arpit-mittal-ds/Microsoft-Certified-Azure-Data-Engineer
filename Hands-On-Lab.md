@@ -169,14 +169,37 @@ automated deployment from the Azure Resource Manager templates stored in Git,
 using Azure Pipelines. 
 
 
+###  Exporting an Azure Resource Manager template
+
+* Creates a new ARM subfolder for storing ARM templates
+
+mkdir ARM
+
+* Exports an ARM template for a resource group 
+
+az group export --name adx-rg --include-parameter-default-value | Out-File ./ARM/adx-rg.json
+
+![image](https://user-images.githubusercontent.com/68102477/129437864-21b03216-ed53-4ad2-aa3c-f4b4f59257e1.png)
 
 
+Azure Resource Manager templates can get complex, so you wouldn’t usually create
+them “by hand.” You either get them already set up by someone else, or you initially
+deploy your resources interactively using the Azure Portal or CLI, and then export the
+corresponding Azure Resource Manager template. It is the preferred method to deploy infrastructure automatically. Let’s commit it to Git and push it to our DevOps remote repository. 
 
+### [Install Git Credential Manager Core](https://docs.microsoft.com/en-us/azure/devops/repos/git/set-up-credential-managers?view=azure-devops)
 
+![image](https://user-images.githubusercontent.com/68102477/129438181-33698644-16ed-4438-8c75-1df88961803a.png)
 
+This way we can commit the JSON ARM Templates to Git. 
 
+N Azure Pipelines is a cloud service that you can use to automatically
+build and test code, publish it to other users, and deploy it automatically.
 
-
+ We store everything in Git, and we
+deploy everything through pipelines. Before jumping into authoring pipelines,
+there’s one more step we need to take—connecting our Azure DevOps project to our
+Azure subscription.
 
 
 
