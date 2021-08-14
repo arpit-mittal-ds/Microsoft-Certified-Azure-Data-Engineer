@@ -20,9 +20,29 @@ Explorer provides an integrated environment to both ingest data and perform anal
 need to connect some compute resource like Azure Machine Learning to it in order
 to use the data.
 
-Using the Azure portal UI at https://azure.microsoft.com/
- Using the Azure REST API
- Using the command line
+###  multiple ways to interact with Azure:
+
+* Using the [Azure portal UI](https://azure.microsoft.com/)
+* Using the Azure REST API
+* Using the command line
+
+All these ultimately end up calling the Azure REST API, behind which sits the Azure Resource Manager
+
+![image](https://user-images.githubusercontent.com/68102477/129435208-4c9b39fc-423d-4046-9128-15ec1a221845.png)
+
+
+* The Azure Resource Manager (ARM) is the deployment and management service for Azure. It provides a management layer that enables you
+to create, update, and delete resources in your Azure account.
+
+* Azure Resource Manager templates are JSON files that define the infrastructure and configuration of Azure resources. The templates use a declarative syntax, where you specify the resources to deploy and the properties of those resources.
+* 
+Azure Resource Manager templates can get complex, so you wouldn’t usually create
+them “by hand.” You either get them already set up by someone else, or you initially
+deploy your resources interactively using the Azure Portal or CLI, and then export the
+corresponding Azure Resource Manager template. Exporting the template for a
+resource means Azure generates the corresponding JSON to describe an existing
+deployment. 
+
 
  focusing on DevOps and automation, we will avoid UI interaction as
 much as possible and instead rely on scripting, which we can more easily transition from
@@ -112,6 +132,52 @@ az storage fs create --account-name "adlsarpit" --name fs1
 ### . Now, let’s create a file on our machine and upload it to the storage account. 
 
 ![image](https://user-images.githubusercontent.com/68102477/129432466-a73cf35b-2a77-4240-a448-ce8c4cb9ae95.png)
+
+![image](https://user-images.githubusercontent.com/68102477/129434470-200dd51d-cdde-4611-a6f3-6cc2cb9dfc6f.png)
+
+
+## Installing the azure-devops extension
+
+az extension add --name azure-devops
+
+### Let’s also generate a [personal access token so we can log into DevOps from Azure CLI](https://docs.microsoft.com/en-us/azure/devops/organizations/accounts/use-personal-access-tokens-to-authenticate?view=azure-devops&tabs=preview-page)
+
+![image](https://user-images.githubusercontent.com/68102477/129434726-1d824fcc-3fa9-41ef-af48-782d630e610a.png)
+
+### Logs in to Azure DevOps by providing the personal access token value
+
+az devops login
+
+### CREATE AN ORGANIZATION
+
+![image](https://user-images.githubusercontent.com/68102477/129434872-b1904dd7-cfaa-4120-860f-d1ccd196f45b.png)
+
+###  Creating a new project within the organization
+
+
+az devops project create --organization "https://dev.azure.com/dataengineering-arpit" --name DE
+
+
+### All az devops commands need to run against an organization and project
+
+ Now we have a DevOps solution set up through which we can support source control and automated deployments
+ 
+### Deploying infrastructure
+First, let’s make sure our infrastructure can be deployed from Git. Our Azure Data
+Explorer cluster was originally set up using Azure CLI. We will look at setting up an
+automated deployment from the Azure Resource Manager templates stored in Git,
+using Azure Pipelines. 
+
+
+
+
+
+
+
+
+
+
+
 
 
 
