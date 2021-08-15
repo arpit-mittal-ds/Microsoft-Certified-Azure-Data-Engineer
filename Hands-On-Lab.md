@@ -75,13 +75,110 @@ https://faun.pub/model-your-azure-synapse-analytics-data-warehouse-4b3b7206ccd7
 * Total cost of ownership - Cloud systems like Azure track costs by subscriptions. A subscription can be based on usage that's measured in compute units, hours, or transactions. * * The cost includes hardware, software, disk storage, and labor. Because of economies of scale, an on-premises system can rarely compete with the cloud in terms of the measurement of the service usage. In cloud systems, the **cost usually is low and aligns more closely with the actual usage.**
 
 
+###  multiple ways to interact with Azure:
+
+* Using the [Azure portal UI](https://azure.microsoft.com/)
+* Using the Azure REST API
+* Using the command line
+
+All these ultimately end up calling the Azure REST API, behind which sits the Azure Resource Manager
+
+![image](https://user-images.githubusercontent.com/68102477/129435208-4c9b39fc-423d-4046-9128-15ec1a221845.png)
+
+
+* The Azure Resource Manager (ARM) is the deployment and management service for Azure. It provides a management layer that enables you
+to create, update, and delete resources in your Azure account.
+
+* Azure Resource Manager templates are JSON files that define the infrastructure and configuration of Azure resources. The templates use a declarative syntax, where you specify the resources to deploy and the properties of those resources.
+* 
+Azure Resource Manager templates can get complex, so you wouldn’t usually create
+them “by hand.” You either get them already set up by someone else, or you initially
+deploy your resources interactively using the Azure Portal or CLI, and then export the
+corresponding Azure Resource Manager template. Exporting the template for a
+resource means Azure generates the corresponding JSON to describe an existing
+deployment. 
+
+
+ focusing on DevOps and automation, we will avoid UI interaction as
+much as possible and instead rely on scripting, which we can more easily transition from
+ad hoc to automated. In most cases, this means using the command line
+
+To interact with Azure using the command line, we will use PowerShell Core and
+the Azure CLI.  Azure CLI is a multiplatform command line for interacting with Azure. It’s used
+for configuration and task automation.
+
+### [CODE REFERENCE]( https://github.com/vladris/azure-data-engineering)
+
+## [AZURE CLI](Install Azure CLI on Windows)
+
+## [QUICK OVERVIEW OF POWERSHELL](https://blog.netwrix.com/2018/02/21/windows-powershell-scripting-tutorial-for-beginners/)
+
+![image](https://user-images.githubusercontent.com/68102477/129430686-e9b0e3fb-2818-4d26-8e60-e444ca39fbe9.png)
+
+![image](https://user-images.githubusercontent.com/68102477/129430808-5b7c3151-51ae-48ec-8522-2d0fe29856e4.png)
+
+Invoke-WebRequest -Uri https://aka.ms/installazurecliwindows -OutFile .\AzureCLI.msi; Start-Process msiexec.exe -Wait -ArgumentList '/I AzureCLI.msi /quiet'; rm .\AzureCLI.msi
+
+A cmdlet is a PowerShell command with a predefined function, similar to an operator in a programming language. Here are some key things to know about cmdlets:
+
+There are system, user and custom cmdlets.
+Cmdlets output results as an object or as an array of objects.
+Cmdlets can get data for analysis or transfer data to another cmdlet using pipes (I’ll discuss pipes more in a moment).
+Cmdlets are case-insensitive. For example, it doesn’t matter whether you type “Get-ADUser”, “get-aduser” or “gEt-AdUsEr”.
+If you want to use several cmdlets in one string, you must separate them with a semicolon (;).
+
+A cmdlet always consists of a verb (or a word that functions as a verb) and a noun, separated with a hyphen (the “verb-noun” rule). For example, some of the verbs include:
+
+Get — To get something
+Set — To define something
+Start — To run something
+Stop — To stop something that is running
+Out — To output something
+New — To create something (“new” is not a verb, of course, but it functions as one)
+
+Get-Help -Category 
+
+Get-Help -Azure
+
+![image](https://user-images.githubusercontent.com/68102477/129431005-6a0b4415-cb2d-41db-a372-389912533525.png)
+
+## AZURE CLI
+
+
+
 ## AZURE DATA STORAGE
 
-### Understand types of data and then map them to correct Azure data platform technologies
+### Understand types of data and then map them to correct Azure data platform technologies / Choose a data storage approach in Azure
+
+**Classify your data**
 
 **Structured data** - data structure is defined at design time -  in the form of tables. Relational systems react slowly to changes in data requirements because the structural database needs to change every time a data requirement changes. When new columns are added, you might need to bulk-update all existing records to populate the new column throughout the table.
 
 **Un-structured data** - In non-relational systems, the data structure isn't defined at design time, and data is typically loaded in its raw format. The data structure is defined only when the data is read.
+
+
+
+## What is an AZURE STORAGE ?
+
+* Azure provides many ways to store your data. There are multiple database options like Azure SQL Database, Azure Cosmos DB, and Azure Table Storage. Azure offers multiple ways to store and send messages, such as Azure Queues and Event Hubs. You can even store loose files using services like Azure Files and Azure Blobs.
+
+* **Azure selected four of these DATA SERVICES and placed them together under the name AZURE STORAGE.** The four services are Azure Blobs, Azure Files, Azure Queues, and Azure Tables. The following illustration shows the elements of Azure Storage.
+
+![image](https://user-images.githubusercontent.com/68102477/129471705-e305aafc-b16a-4fc7-9878-429f5e80d721.png)
+
+* These four were given special treatment because they are all **primitive, cloud-based storage services and are often used together in the same application.**
+
+## What is an AZURE STORAGE ACCOUNT?
+
+**A storage account is a container that groups a set of Azure Storage services together. Only data services from Azure Storage can be included in a storage account (Azure Blobs, Azure Files, Azure Queues, and Azure Tables).** The following illustration shows a storage account containing several data services.
+
+![image](https://user-images.githubusercontent.com/68102477/129471753-68769d75-1af2-4d1c-a341-7f979bbef3a5.png)
+
+**Combining data services into a storage account lets you manage them as a group. The settings you specify when you create the account, or any that you change after creation, are applied to everything in the account.**
+
+### How many storage accounts do you need?
+
+**A storage account represents a collection of settings like location, replication strategy, and subscription owner. You need one storage account for every group of settings that you want to apply to your data.**
 
 
 # Azure Storage offers four configuration options:
@@ -240,75 +337,6 @@ Some Azure services cover both storage and compute. For example, Azure Data
 Explorer provides an integrated environment to both ingest data and perform analytics on it. Other services cover a single aspect; we can put data in a data lake, but we
 need to connect some compute resource like Azure Machine Learning to it in order
 to use the data.
-
-###  multiple ways to interact with Azure:
-
-* Using the [Azure portal UI](https://azure.microsoft.com/)
-* Using the Azure REST API
-* Using the command line
-
-All these ultimately end up calling the Azure REST API, behind which sits the Azure Resource Manager
-
-![image](https://user-images.githubusercontent.com/68102477/129435208-4c9b39fc-423d-4046-9128-15ec1a221845.png)
-
-
-* The Azure Resource Manager (ARM) is the deployment and management service for Azure. It provides a management layer that enables you
-to create, update, and delete resources in your Azure account.
-
-* Azure Resource Manager templates are JSON files that define the infrastructure and configuration of Azure resources. The templates use a declarative syntax, where you specify the resources to deploy and the properties of those resources.
-* 
-Azure Resource Manager templates can get complex, so you wouldn’t usually create
-them “by hand.” You either get them already set up by someone else, or you initially
-deploy your resources interactively using the Azure Portal or CLI, and then export the
-corresponding Azure Resource Manager template. Exporting the template for a
-resource means Azure generates the corresponding JSON to describe an existing
-deployment. 
-
-
- focusing on DevOps and automation, we will avoid UI interaction as
-much as possible and instead rely on scripting, which we can more easily transition from
-ad hoc to automated. In most cases, this means using the command line
-
-To interact with Azure using the command line, we will use PowerShell Core and
-the Azure CLI.  Azure CLI is a multiplatform command line for interacting with Azure. It’s used
-for configuration and task automation.
-
-### [CODE REFERENCE]( https://github.com/vladris/azure-data-engineering)
-
-## [AZURE CLI](Install Azure CLI on Windows)
-
-## [QUICK OVERVIEW OF POWERSHELL](https://blog.netwrix.com/2018/02/21/windows-powershell-scripting-tutorial-for-beginners/)
-
-![image](https://user-images.githubusercontent.com/68102477/129430686-e9b0e3fb-2818-4d26-8e60-e444ca39fbe9.png)
-
-![image](https://user-images.githubusercontent.com/68102477/129430808-5b7c3151-51ae-48ec-8522-2d0fe29856e4.png)
-
-Invoke-WebRequest -Uri https://aka.ms/installazurecliwindows -OutFile .\AzureCLI.msi; Start-Process msiexec.exe -Wait -ArgumentList '/I AzureCLI.msi /quiet'; rm .\AzureCLI.msi
-
-A cmdlet is a PowerShell command with a predefined function, similar to an operator in a programming language. Here are some key things to know about cmdlets:
-
-There are system, user and custom cmdlets.
-Cmdlets output results as an object or as an array of objects.
-Cmdlets can get data for analysis or transfer data to another cmdlet using pipes (I’ll discuss pipes more in a moment).
-Cmdlets are case-insensitive. For example, it doesn’t matter whether you type “Get-ADUser”, “get-aduser” or “gEt-AdUsEr”.
-If you want to use several cmdlets in one string, you must separate them with a semicolon (;).
-
-A cmdlet always consists of a verb (or a word that functions as a verb) and a noun, separated with a hyphen (the “verb-noun” rule). For example, some of the verbs include:
-
-Get — To get something
-Set — To define something
-Start — To run something
-Stop — To stop something that is running
-Out — To output something
-New — To create something (“new” is not a verb, of course, but it functions as one)
-
-Get-Help -Category 
-
-Get-Help -Azure
-
-![image](https://user-images.githubusercontent.com/68102477/129431005-6a0b4415-cb2d-41db-a372-389912533525.png)
-
-## AZURE CLI
 
 The general format of an az command is
 **az  group  [ subgroup ]  command   arguments**
