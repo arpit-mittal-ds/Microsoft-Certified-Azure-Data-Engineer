@@ -1,3 +1,81 @@
+
+# AZURE DATA ENGINEER
+
+**[Azure for the Data Engineer](https://docs.microsoft.com/en-us/learn/paths/azure-for-the-data-engineer/)**
+
+## Understand the evolving world of data 
+
+Over the last decade, the amount of data that systems and devices generate has increased significantly. Because of this increase, new technologies, roles, and approaches to working with data are affecting data professionals
+
+1. Exponential increase in the number of devices and software that generate data.
+2. Data is key - Business stakeholders use data to make business decisions. Consumers use data to make decisions such as what to buy.
+
+
+## Tasks of an Azure data engineer:
+
+* Design and develop data storage and data processing solutions for the enterprise.
+* Set up and deploy cloud-based data services such as blob services, databases, and analytics.
+* Secure the platform and the stored data. Make sure only the necessary users can access the data.
+* Ensure business continuity in uncommon conditions by using techniques for high availability and disaster recovery.
+* Monitor to ensure that the systems run properly and are cost-effective.
+
+## EXAMPLE - Design a data engineering project by following the five phases: source, ingest, prepare, analyze, and consume.
+
+Contoso Health Network recently deployed IoT devices to its intensive care unit (ICU). Here are the goals of the project:
+
+* Capture data on patient biometric monitoring in real time to help physicians treat their patients.
+* Store the biometric data so that Contoso's research center can further analyze it in the future.
+* Use Azure Machine Learning to understand which treatments improve the quality of care and reduce the likelihood that a patient will be readmitted to the hospital.
+* Create a visualization of the data's history for Contoso's chief medical officer.
+
+![image](https://user-images.githubusercontent.com/68102477/128694625-66be149f-c169-454e-ab71-ac1ee8960fed.png)
+
+*  Azure IoT Hub to capture real-time data from the ICU's IoT devices.
+*  Azure Stream Analytics to stream and enrich the IoT data, to create windows and aggregations, and to integrate Azure Machine Learning.
+*  Azure Data Lake Storage Gen2 to store the biometric data at high speed.
+*  Azure Data Factory to perform the extract, load, transform, and load (ELTL) process to move the data from the data lake store to Azure SQL Data Warehouse.
+*  Azure SQL Data Warehouse to provide data warehousing services to support the chief medical officer's needs.
+*  Power BI to create the patient dashboard. Part of the dashboard will show real-time telemetry about the patient's condition. The other part will show the patient's recent history.
+*  Azure Machine Learning to process both raw and aggregated data. Researchers will use this to perform predictive analytics on patient readmittance.
+
+
+
+#Notes
+
+https://docs.microsoft.com/en-us/azure/architecture/data-guide/
+
+## Two general categories of data solution: traditional RDBMS workloads and big data solutions
+
+**Traditional RDBMS workloads**
+
+These workloads include online transaction processing (OLTP) and online analytical processing (OLAP). Data in OLTP systems is typically relational data with a predefined schema and a set of constraints to maintain referential integrity. Often, data from multiple sources in the organization may be consolidated into a data warehouse, using an ETL process to move and transform the source data.
+
+![image](https://user-images.githubusercontent.com/68102477/122543146-cda42a00-d06e-11eb-9b00-3edc864e2c75.png)
+
+**Big data solutions**
+
+A big data architecture is designed to handle the ingestion, processing, and analysis of data that is too large or complex for traditional database systems. The data may be processed in batch or in real time. Big data solutions typically involve a large amount of non-relational data, such as key-value data, JSON documents, or time series data. Often traditional RDBMS systems are not well-suited to store this type of data. The term NoSQL refers to a family of databases designed to hold non-relational data. The term isn't quite accurate, because many non-relational data stores support SQL compatible queries. The term NoSQL stands for "Not only SQL".
+
+![image](https://user-images.githubusercontent.com/68102477/122543247-eb718f00-d06e-11eb-98e2-5d3c16eceab3.png)
+
+**The goal here is to help you select the right data architecture or data pipeline for your scenario, and then select the Azure services and technologies that best fit your requirements.**
+
+
+
+https://docs.microsoft.com/en-us/azure/machine-learning/team-data-science-process/sqldw-walkthrough
+
+https://faun.pub/model-your-azure-synapse-analytics-data-warehouse-4b3b7206ccd7
+
+
+
+
+
+
+
+
+
+
+
 # DEFINITIONS
 
 * Infrastructure as code is the process of managing and provisioning infrastructure through automation by relying on configuration files and automation scripts as opposed to manual and interactive configurations.
@@ -242,15 +320,212 @@ We just configured our Azure Data Factory to connect to the open dataset via HTT
 ### Now we’ll define the dataset.
 * DEFINITION A dataset simply references the data you want to use in ADF.
 
+Linked services tell Azure Data Factory how to connect to an external resource. Datasets tell Azure Data Factory what to expect there. 
+
+
+
+
+
+# Azure Storage offers four configuration options:
+
+## Azure Blob: A scalable object store for text and binary data.
+
+If you need to provision a data store that will **store but not query data**, your cheapest option is to set up a storage account as a Blob store. 
+
+If you create a storage account as a Blob store, you can't query the data directly. **To query it, either move the data to a store that supports queries or set up the Azure Storage account for a data lake storage account.**
+
+## Azure Files: Managed file shares for cloud or on-premises deployments
+
+## Azure Queue: A messaging store for reliable messaging between application components
+
+## Azure Table: A NoSQL store for no-schema storage of structured data
+
+To ingest data into your system, use Azure Data Factory, Storage Explorer, the AzCopy tool, PowerShell, or Visual Studio. 
+
+Azure Storage also provides you with fine-grained control over who has access to your data. You'll secure the data by using keys or shared access signatures. 
+
+Azure Resource Manager provides a permissions model that uses role-based access control (RBAC). Use this functionality to set permissions and assign roles to users, groups, or applications.
+
+
+## Data storage in Azure Data Lake Storage ADLS
+
+* Data Lake Storage Gen2 builds on Azure Blob storage capabilities to optimize it specifically for analytics workloads. This integration enables analytics performance, the tiering and data lifecycle management capabilities of Blob storage, and the high-availability, security, and durability capabilities of Azure Storage.
+
+* A benefit of Data Lake Storage Gen2 is that you can treat the data as if it's stored in a Hadoop Distributed File System. With this feature, you can store the data in one place and access it through compute technologies including Azure Databricks, Azure HDInsight, and Azure Synapse Analytics without moving the data between environments.
+
+* Azure Data Lake Storage organizes the stored data into a hierarchy of directories and subdirectories, much like a file system, for easier navigation. As a result, data processing requires less computational resources, reducing both the time and cost
+
+* Because Data Lake Storage supports Azure Active Directory ACLs, security administrators can control data access by using the familiar Active Directory Security Groups. Role-based access control (RBAC) is available both in Gen1 and Gen2. Built-in security groups include ReadOnlyUsers, WriteAccessUsers, and FullAccessUsers.
+
+* Enable the firewall to limit traffic to only Azure services. Data Lake Storage **automatically encrypts data at rest, protecting data privacy.**
+
+select Storage account - blob  => select StorageV2 (general-purpose v2) => the Data lake storage gen2(preview) option is set to Enabled 
+
+In Azure Blob storage, you can store large amounts of unstructured ("object") data, in a single hierarchy, also known as a flat namespace. You can access this data by using HTTP or HTTPs. Azure Data Lake Storage Gen2 builds on blob storage and optimizes I/O of high-volume data by using hierarchical namespaces 
+
+Hierarchical namespaces organize blob data into directories and stores metadata about each directory and the files within it. This structure allows operations, such as directory renames and deletes, to be performed in a single atomic operation
+
+If you want to store data without performing analysis on the data, set the Hierarchical Namespace option to Disabled to set up the storage account as an Azure Blob storage account. You can also use blob storage to archive rarely used data or to store website assets such as images and media.
+
+If you are performing analytics on the data, set up the storage account as an Azure Data Lake Storage Gen2 account by setting the Hierarchical Namespace option to Enabled. Because Azure Data Lake Storage Gen2 is integrated into the Azure Storage platform, applications can use either the Blob APIs or the Azure Data Lake Storage Gen2 file system APIs to access data.
+
+
+[Examine uses for Azure Data Lake Storage Gen2](https://docs.microsoft.com/en-us/learn/modules/introduction-to-azure-data-lake-storage/6-use-cases)
+
+# STORAGE
+
+Storage is the
+core piece of a data platform
+around which everything else
+is built. Data gets ingested
+into the storage layer and is
+distributed from there. All
+workloads (data processing,
+analytics, and machine
+learning) access this layer.
+
+### DEFINITIONS
+
+* A dataset is a collection of data. In the case of tabular data, a dataset corresponds to one or more tables.
+
+* A data fabric is an environment for storing and managing data.
+From a consumer perspective, it represents a single storage technology—the
+“fabric” on which the data persists. Examples of data fabrics in Azure are SQL,
+Azure Data Explorer, Blob Storage, and so forth.
+
+* Upstream
+systems are systems from which we ingest data into our platform. 
+
+* Downstream
+systems are systems that consume data from our data platform.
+
+Different teams in
+an organization uses different
+technologies to store data.
+
+Example - The
+website team uses Azure Data
+Explorer, the payments team
+uses Azure SQL, while the
+customer success team uses a
+third-party solution from which
+we can get data via an API.
+So in this example, a data platform needs
+to stitch together data from multiple fabrics.
+
+A large data platform needs to accommodate heterogenous data
+storage. By heterogenous data storage, we mean data spread across multiple data fabrics.
+
+We need to embrace having data across multiple storage solutions, not only for ingestion. Different workloads might perform better on different data fabrics 
+
+ For example, Azure Data Explorer excels at querying millions
+of rows in a matter of seconds, which identifies anomalies or produces aggregates.
+Suppose we want to keep a large amount of data for historical reasons or simply to
+allow other teams within our enterprise to copy the data to their systems. In this case,
+Azure Data Explorer with its high-performance indexing and caching capabilities
+might be overkill, so we can park the data in a cheap storage like Azure Data Lake
+Storage
+
+![image](https://user-images.githubusercontent.com/68102477/129006996-734aa307-e384-4f78-9696-4867689f3f8d.png)
+
+## INGESTION
+
+### Having a single source of truth
+
+While we should embrace supporting multiple data fabrics, there is value in having a
+“single source of truth”—one storage solution through which all data in the system
+flows. Figure 2.4 shows Azure Data Explorer as such a single source of truth for our
+data platform.
+
+![image](https://user-images.githubusercontent.com/68102477/129009592-0698ed6c-ab23-4054-a8d5-565a3121b8e9.png)
+
+a data issue upstream.
+Once the issue is identified and corrected, we need to re-ingest the data. The single
+source of truth helps because once we know the data has been updated there, the
+updates flow seamlessly throughout the system. Contrast this with a setup in which various datasets land in different data fabrics. We would have to track the data flow of a
+single dataset to make sure a fix is propagated correctly.
+ The trade-off to be aware of is that the more data we move around, the more
+latency and costs we incur and the more failure points we introduce into the system.
+For example, if we ingest data from the payments team into Azure Data Explorer, then
+we copy it to Azure Data Lake Storage, either of the steps could fail; we might run into
+an issue ingesting into Azure Data Explorer, or we might run into an issue copying
+into Azure Data Lake Storage. If we ingest the data directly into Azure Data Lake Storage, we have just one failure point, although it will be harder to tie this data together
+with the data available in Azure Data Explorer. We need to find the right balance
+between placing the data in the optimal storage solution for the processing we are trying to do and for keeping things at a reasonable cost and complexity level.
+
+## Azure Data Explorer
+
+Azure Data Explorer is a fast, fully managed data analytics service for analysis on large
+volumes of data
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 ## CREATE A COSMOS DB ACCOUNT
 
 
+
 # SYNAPSE
+
+Azure Synapse Analytics is an integrated analytics platform, which combines data warehousing, big data analytics, data integration, and visualization into a single environment. 
+
+This implements a data warehouse using a dedicated SQL pool that leverages the Massively Parallel Processing engine that brings together enterprise data warehousing and Big Data analytics.
 
 
 ## [CREATE A SYNAPSE WORKSPACE](https://docs.microsoft.com/en-gb/azure/synapse-analytics/get-started-create-workspace)
 
+
+This deployment creates several resources which include an **Azure Data Lake Storage Gen2 account that acts as the primary storage and the container to store workspace data. **
+
+The **workspace stores data in Apache Spark tables.... ??** It also stores Spark application logs under a folder called /synapse/workspacename. There are endpoints created that can be used to connect to the SQL on-demand service, and the Azure Synapse Analytics Workspace itself.
+
+Azure Synapse Analytics enables you to create **pools, either SQL pools, or Spark pools** within the workspace that can be seamlessly mixed and matched based on your requirements.   It is able to do this through Azure Synapse Analytics shared metadata, which enables the different engines to share databases and tables.
+
+
+For example, A shared Hive-compatible metadata system allows tables defined on files in the data lake to be seamlessly consumed by either Spark or Hive. SQL and Spark can directly explore and analyze Parquet, CSV, TSV, and JSON files stored in the data lake. 
+
+![image](https://user-images.githubusercontent.com/68102477/129020246-95fb7163-a5e0-4a74-ba75-cd5763e4a6b4.png)
+
+### You need to select a Data Lake Storage Gen2 account and a container in that account to create a workspace.
+
+![image](https://user-images.githubusercontent.com/68102477/129021135-5fd813bc-c787-41ed-97b6-a5f1c2e02efe.png)
+
+
+[How to set up access control for your Synapse workspace](https://docs.microsoft.com/en-gb/azure/synapse-analytics/security/how-to-set-up-access-control?WT.mc_id=Portal-Microsoft_Azure_Synapse)
+
+Data in a data warehouse is stored in permanent tables that are populated using an extract, transform, and load (ETL) process by services such as Azure Synapse pipelines, or Azure Data Factory. As a result, you need to understand the data that is stored in the sources systems, how it should arrive within the data warehouse, which in turn dictates how you should cleanse or transform the data.
+
+Dedicated SQL pools represent a collection of analytic resources that are being provisioned when using Synapse SQL. When you need predictable performance and cost, creating dedicated SQL pools to reserve processing power for data permanently stored in SQL tables in a data warehouse is the best approach to take.
+
+The serverless model is ideal for unplanned or ad hoc workloads that the diagnostic analytics approach would generate.
 
 ## [ANALYZE DATA WITH A SERVERLESS SQL POOL](https://docs.microsoft.com/en-gb/azure/synapse-analytics/get-started-analyze-sql-on-demand)
 
@@ -258,6 +533,23 @@ We just configured our Azure Data Factory to connect to the open dataset via HTT
 ## [CREATE A SERVERLESS APACHE SPARK POOL](https://docs.microsoft.com/en-gb/azure/synapse-analytics/get-started-analyze-sql-pool)
 
 ## ANALYZE DATA WITH APACHE SPARK POOL
+
+
+Big data workloads are defined as workloads to handle data that is too large or complex for traditional database systems. Apache Spark processes large amounts of data in memory, which boosts the performance of analyzing big data more effectively, and this capability is available within Azure Synapse Analytics, and is referred to as Spark pools.
+
+To achieve this capability, Spark pool clusters are groups of computers that are treated as a single computer and handle the execution of commands issued from notebooks. The clusters allow processing of data to be parallelized across many computers to improve scale and performance. It consists of a Spark Driver and Worker nodes. The Driver node sends work to the Worker nodes and instructs them to pull data from a specified data source. Moreover, you can configure the number of nodes that are required to perform the task.
+
+**Support for Azure Data Lake Storage Generation 2**
+
+Spark pools in Azure Synapse can use Azure Data Lake Storage Generation 2 as well as BLOB storage.
+
+The primary use case for Apache Spark for Azure Synapse Analytics is to process big data workloads that cannot be handled by Azure Synapse SQL, and where you don’t have an existing Apache Spark implementation.
+
+Perhaps you must perform a complex calculation on large volumes of data. Handling this requirement in Spark pools will be far more efficient than in Synapse SQL. You can pass the data through to the Spark cluster to perform the calculation, and then pass the processed data back into the data warehouse, or back to the data lake.
+
+If you already have a Spark implementation in place already, Azure Synapse Analytics can also integrate with other Spark implementations such as Azure Databricks, so you don’t have to use the feature in Azure Synapse Analytics if you already have a Spark setup already.
+
+So 3 options - Synapse SQL, Synapse Spark Pools, Azure Databricks.
 
 
 
@@ -277,6 +569,27 @@ We just configured our Azure Data Factory to connect to the open dataset via HTT
 
 
 
+## Implement a Data Warehouse with Azure Synapse Analytics
+
+A data warehouse is a centralized relational database that integrates data from one or more disparate sources. 
+
+Data warehouses store current and historical data and are used for reporting and analysis of the data. 
+
+Many organizations need to store and process data more quickly and easily at an increasing scale to meet business demand and respond to market shifts. In the past this has involved complex processes, using different technologies including Big Data technologies and data integration tools to ingest and prepare the data before presenting it to applications. 
+
+Azure Synapse Analytics is designed to simplify this process with limitless scale through one experience. Massively Parallel Processing architecture at limitless scale
+
+
+
+![image](https://user-images.githubusercontent.com/68102477/125708158-91648194-dea3-4b00-849e-ae41067ad65e.png)
+
+![image](https://user-images.githubusercontent.com/68102477/125708286-328ebb4a-5e37-4ecc-a4ff-f060201ece24.png)
+
+![image](https://user-images.githubusercontent.com/68102477/125709001-53db38d2-c6d3-4fe9-9d03-c3e8edcec0bc.png)
+
+![image](https://user-images.githubusercontent.com/68102477/125713267-020e1c00-0f63-4db6-9079-856f78dab2e9.png)
+
+![image](https://user-images.githubusercontent.com/68102477/125713372-3f052519-ab7e-40e2-91a2-76c06d5e67ee.png)
 
 
 
@@ -286,6 +599,268 @@ We just configured our Azure Data Factory to connect to the open dataset via HTT
 
 
 
+
+
+
+
+
+
+# Using PolyBase to load data from Azure storage to Azure SQL Data Warehouse.
+
+
+### DATA IS INITIALLY STORED IN AZURE BLOB
+
+![image](https://user-images.githubusercontent.com/68102477/128795342-4d717402-baa9-4d33-b02f-e0a05081b2a2.png)
+
+### CONNECT TO SYNAPSE USING VISUAL STUDIO AND EXPAND EXTERNAL TABLES 
+
+* USING EXTERNAL TABLES, POLYBASE ALLOWS TO ACCESS AND QUERY DATA STORED OUTSIDE DATABASE
+
+![image](https://user-images.githubusercontent.com/68102477/128795553-4fcae6f9-c4cd-4438-9830-de8ad6d619ca.png)
+
+### STEP 1 - AUTHENTICATE AGAINST AZURE STORAGE ACCOUNT
+
+* GET THE STORAGE KEY FROM AZURE STORAGE ACCOUNT
+
+![image](https://user-images.githubusercontent.com/68102477/128795691-072b6036-1553-432a-a881-cff15241cdca.png)
+
+* CREATE MASTER KEY IN SYNAPSE AND CREATE DATABSE SCOPED CREDENTIAL
+
+![image](https://user-images.githubusercontent.com/68102477/128795773-284683b1-0c72-42fb-953d-43c7f80ebb3a.png)
+
+### STEP 2 - CREATE EXTERNAL DATA SOURCE 
+
+* BASICALLY WE ARE SPECIFYING LOCATION AND CREDENTIALS FOR AZURE BLOB ACCOUNT
+* TYPE - HADOOP BECAUSE POLYBASE USES HADOOP APIs TO ACCESS AZURE STORAGE DATA 
+
+![image](https://user-images.githubusercontent.com/68102477/128795994-0253b475-0d97-4539-b6f9-a410cdb1fc5b.png)
+
+### STEP 3 - CREATE EXTERNAL FILE FORMAT
+
+* TO SPECIFY THE LAYOUT OF THE DATA - IN THIS CASE - COMMA SEPARATED FILE
+
+![image](https://user-images.githubusercontent.com/68102477/128796626-0684c07c-866a-4afa-9b44-6a9d091c4e07.png)
+
+
+### STEP 4 - CREATE EXTERNAL TABLE
+
+* SPECIFY LOCATION - DIRECTORY WHERE THE FILE RESIDES IN AZURE BLOB
+
+![image](https://user-images.githubusercontent.com/68102477/128796748-2192b88a-7172-4144-ad5a-a55da59e436b.png)
+
+
+### STEP 5 - LOAD THE DATA TO SYNAPSE
+
+![image](https://user-images.githubusercontent.com/68102477/128796847-e6fb5046-aedb-4327-86ff-c390d1d75082.png)
+
+
+
+
+
+
+# SECURITY
+
+Identity has become the new primary security boundary. Accurately proving that someone is a valid user of your system, with an appropriate level of access, is critical to maintaining control of your data. This identity layer is now more often the target of attack than the network is.
+
+
+Compare authentication and authorization
+
+Two fundamental concepts that you need to understand when talking about identity and access are authentication (AuthN) and authorization (AuthZ).
+
+Authentication and authorization both support everything else that happens. They occur sequentially in the identity and access process.
+
+For example, all employees can access inventory and pricing software, but only store managers can access payroll and certain accounting software.
+
+What is authentication?
+Authentication is the process of establishing the identity of a person or service that wants to access a resource. It involves the act of challenging a party for legitimate credentials and provides the basis for creating a security principal for identity and access control. It establishes whether the user is who they say they are.
+
+What is authorization?
+Authentication establishes the user's identity, but authorization is the process of establishing what level of access an authenticated person or service has. It specifies what data they're allowed to access and what they can do with it.
+
+![image](https://user-images.githubusercontent.com/68102477/129080269-832a0d1e-b495-4fb5-b903-9c01e8123fd2.png)
+
+![image](https://user-images.githubusercontent.com/68102477/129120635-3a65ae36-f5f3-484b-888d-4d76ac900593.png)
+
+The identification card represents credentials that the user has to prove their identity (you'll learn more about the types of credentials later in this module.) Once authenticated, authorization defines what kinds of applications, resources, and data that user can access.
+
+
+What is Azure Active Directory?
+
+Tailwind Traders already uses Active Directory to secure its on-premises environments. The company doesn't want its users to have a different username and password to remember for accessing applications and data in the cloud. Can the company integrate its existing Active Directory instance with cloud identity services to create a seamless experience for its users?
+
+For on-premises environments, Active Directory running on Windows Server provides an identity and access management service that's managed by your own organization. Azure AD is Microsoft's cloud-based identity and access management service.
+
+A tenant is a representation of an organization. A tenant is typically separated from other tenants and has its own identity.
+
+
+Azure AD provides services such as:
+
+Authentication
+
+This includes verifying identity to access applications and resources. It also includes providing functionality such as self-service password reset, multifactor authentication, a custom list of banned passwords, and smart lockout services.
+
+Single sign-on
+What's single sign-on?
+Single sign-on enables a user to sign in one time and use that credential to access multiple resources and applications from different providers.
+
+More identities mean more passwords to remember and change
+SSO enables you to remember only one username and one password to access multiple applications. A single identity is tied to a user, which simplifies the security model. Application management
+
+You can manage your cloud and on-premises apps by using Azure AD.
+
+Application management
+
+You can manage your cloud and on-premises apps by using Azure AD.
+
+Device management
+
+Along with accounts for individual people, Azure AD supports the registration of devices. 
+
+
+
+Connecting Active Directory with Azure AD enables you to provide a consistent identity experience to your users.
+
+There are a few ways to connect your existing Active Directory installation with Azure AD. Perhaps the most popular method is to use Azure AD Connect.
+
+
+![image](https://user-images.githubusercontent.com/68102477/129120658-1b2e56d5-0659-461b-879a-f1a5c7b0d5d9.png)
+
+![image](https://user-images.githubusercontent.com/68102477/129120675-fe671ae0-059c-469d-a8f2-821dd6fe85ea.png)
+
+![image](https://user-images.githubusercontent.com/68102477/129120706-af0ab132-2f88-4028-b42f-4dd74564a18b.png)
+
+![image](https://user-images.githubusercontent.com/68102477/129120720-97629bdb-fe86-4caa-892f-129ba89cdf2c.png)
+
+![image](https://user-images.githubusercontent.com/68102477/129120729-70b6703c-1ff2-441b-bee1-23d123fe0b92.png)
+
+![image](https://user-images.githubusercontent.com/68102477/129121244-6c814e39-6068-4d6c-8beb-56dc2c413b49.png)
+
+## COMMAND LINE TOOLS (BASH OR POWERSHELL)
+
+![image](https://user-images.githubusercontent.com/68102477/129121314-e18bdeb0-ba23-4a30-b48e-4d3d1e04ed40.png)
+
+![image](https://user-images.githubusercontent.com/68102477/129121414-aadc3740-8746-425c-928b-9a957c5f069f.png)
+
+![image](https://user-images.githubusercontent.com/68102477/129121669-d735e59f-3d11-4dfa-81a4-03390a7d479a.png)
+
+### Azure Resource Group 
+
+* A logical grouping of few resources on Azure which share the same lifecycle.
+
+
+### Azure Subscription
+
+![image](https://user-images.githubusercontent.com/68102477/129122479-18b69377-00f7-4196-b766-5a2464d1a05e.png)
+
+### Azure Resource Manager (ARM) - ARM Templates
+
+![image](https://user-images.githubusercontent.com/68102477/129136394-b4bbbe2a-1edc-4ef3-be48-a8f211b5f1c2.png)
+
+![image](https://user-images.githubusercontent.com/68102477/129182626-3debf122-2bfa-4c41-9f36-f64c1445a109.png)
+
+
+### Using Powershell - can get all the commands for Azure
+
+![image](https://user-images.githubusercontent.com/68102477/129182575-95e7d93c-87d9-4a72-902f-7be50c3520c3.png)
+
+
+![image](https://user-images.githubusercontent.com/68102477/129182889-2ae720a7-08b1-4e94-9bb0-18ae1e988106.png)
+
+![image](https://user-images.githubusercontent.com/68102477/129183283-a99547ac-b0a1-4dc1-9cef-96750128cb05.png)
+
+
+## AZURE IDENTITY MANAGEMENT
+
+![image](https://user-images.githubusercontent.com/68102477/129183442-805eb095-439e-4b4b-9c83-e91c34381996.png)
+
+
+
+
+
+
+
+
+
+
+
+
+
+# WHAT IS DEVOPS ?
+
+The standard across the software industry used to be for the **development team (Dev)
+to implement services** and for the **operations team (Ops) to deploy them in the production environment and then monitor them.** The thinking behind this was that the
+production environment needed to be locked down, and operational concerns like
+provisioning machines, configuration, and monitoring required a different set of
+skills than the design and development of services. **DevOps, on the other hand, lets
+software engineers take charge of the end-to-end process.**
+
+
+**DEFINITION** 
+
+A DevOps team owns their solution end to end, from requirements
+gathering and design through development and testing to deployment, monitoring, and fixing production issues.
+
+
+**Two major shifts in the industry caused the emergence of DevOps.**
+
+* The first is the broad adoption of agile software development practices, which aim to optimize the
+time it takes for software delivery, from requirements to production. 
+
+*  The second major shift is the move to the cloud. . The key change is the move from individual servers, which
+require a lot of maintenance and attention, to infrastructure that can be provisioned
+and deprovisioned on demand. 
+
+The shift to the cloud created a renewed focus on automation for deployment and
+configuration, which is an invaluable tool in the DevOps toolbox. The infrastructureas-code process of managing and provisioning infrastructure makes deployment and
+operational concerns much more like software development. 
+
+**Some of the key software tools that enable DevOps follow:**
+
+* Source code management
+* Build automation
+* Packaging
+* Release automation
+* Monitoring and alerting
+
+**BENEFIT**
+We store our configuration in DevOps Repos (Git) and deploy using a pipeline.
+If needed, we can replicate the deployment in a different environment.
+
+
+It might seem like a lot of extra effort, but we know from software engineering the
+value of automation. It might be easier to, for example, test some code manually once
+or twice, but with a small investment in test automation, we save a lot of time in the
+long run. We can run tests much more frequently and catch issues as early as they
+appear, and that ends up saving us a lot of manual testing time.
+
+DevOps removes
+the coordination overhead between the two teams and the issues this overhead produces. For example, a deployment fails and the developer says, “It works on my
+machine.” Then the developer works with the ops counterpart to identify the issue.
+
+## DEPLOYING INFRASTRUCTURE
+
+
+
+
+## AZURE DEVOPS
+
+* Azure Pipelines, which we will use to automate build, validation, and deployment
+
+* Source control, also known as Azure Repos, which includes Git hosting, code
+review, and policies.
+
+![image](https://user-images.githubusercontent.com/68102477/128985454-9dbb0664-50c8-41c0-9e47-c3d21a4a48be.png)
+
+![image](https://user-images.githubusercontent.com/68102477/128985500-d38beabf-6eeb-463a-aa91-0fa7b00ec3bd.png)
+
+![image](https://user-images.githubusercontent.com/68102477/128985583-cb9c23f0-5e21-4e88-bd1b-0d6cd8acb449.png)
+
+![image](https://user-images.githubusercontent.com/68102477/128985607-73c445a0-8461-4fa5-bb6e-d6992d7fe8a8.png)
+
+### Authenticate against your tenant so that the DevOps service is provisioned under your Azure account
+
+
+![image](https://user-images.githubusercontent.com/68102477/129005072-48816076-816a-4a44-b273-dc2e3e6fa118.png)
 
 
 
