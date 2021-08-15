@@ -201,7 +201,46 @@ deploy everything through pipelines. Before jumping into authoring pipelines,
 there’s one more step we need to take—connecting our Azure DevOps project to our
 Azure subscription.
 
+## Azure Data Factory
 
+# spin up an Azure Data Factory instance
+
+* [setup.ps1 script should be used in production]()
+*
+* Break up of Steps
+
+### Creates a new resource group to host our data factory
+az group create --location "Central US" --name adf-rg
+
+### Installs the datafactory extension
+az extension add --name datafactory
+
+### Provisions the data factory in the newly created resource group
+az datafactory factory create --location "Central US" --name "adfarpit" --resource-group adf-rg
+
+![image](https://user-images.githubusercontent.com/68102477/129465585-bde37520-5901-4922-9de6-a7910870f84b.png)
+
+**Usually, you would set up the data movement through the visual editor. We’re going to use Azure CLI because it is more concise; instead of showing a series of screenshots, we’ll create a JSON file and run a command. In fact, once we set up DevOps for Azure Data Factory, WE SHOULD NOT USE CLI TO PROVISION OBJECTS.**
+
+### Setting up the data source
+
+* First, we need to set up our data source: the [Bing COVID-19 open dataset](http://mng.bz/y9vy). We will start by creating a linked service.
+
+**DEFINITION Linked services are much like connection strings. They define the connection information needed for the data factory to connect to external resources.**
+
+* Azure Data Factory can connect to many external resources, from Azure-native services like Azure SQL, Azure Data Explorer, and Azure Data Lake Storage to Amazon S3, SAP HANA, and to generic resources like FTP shared, HTTP servers, and so on.
+
+* For our scenario, we need to connect to an HTTP server for the source and ADLS for the destination.
+
+### Creating an HttpServer linked service
+
+az datafactory linked-service create --factory-name "adfarpit" --resource-group adf-rg --name bingcovid19 --properties '@bingcovid19.json'
+
+We just configured our Azure Data Factory to connect to the open dataset via HTTP.
+
+
+### Now we’ll define the dataset.
+* DEFINITION A dataset simply references the data you want to use in ADF.
 
 
 ## CREATE A COSMOS DB ACCOUNT
