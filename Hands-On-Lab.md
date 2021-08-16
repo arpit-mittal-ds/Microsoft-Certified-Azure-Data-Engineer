@@ -122,6 +122,37 @@ Authentication establishes the user's identity, but authorization is the process
 ### Again in Azure CLoud resources we use Azure AD CENTRALIZED service to authenticate to various Azure cloud resources
 ![image](https://user-images.githubusercontent.com/68102477/129502356-3afa5331-89b9-4652-bc4c-f0a3d8d97f68.png)
 
+### Demo
+
+* CREATE A NEW ACTIVE DIRECTORY
+* ASSOCIATE THE EXISTING SUBSCRIPTION TO THE NEW ACTIVE DIRECTORY
+
+![image](https://user-images.githubusercontent.com/68102477/129505604-c7442474-b809-4519-bd29-9ba751b203b2.png)
+
+![image](https://user-images.githubusercontent.com/68102477/129505623-45ced121-27dc-4bce-8de6-4635fb0bfa3b.png)
+
+![image](https://user-images.githubusercontent.com/68102477/129506026-6e1699e9-2aae-47be-a6ea-27e3fbda9156.png)
+
+
+
+### [Relationship between Subscription and Active Directory](https://docs.microsoft.com/en-gb/azure/active-directory/fundamentals/active-directory-how-subscriptions-associated-directory?amp;clcid=0x9)
+
+**Newly Created Active Directory (and associated tenant and organization) will not have access to the Subscription present in previous Default Directory
+![image](https://user-images.githubusercontent.com/68102477/129506461-b73fdcb8-9cfe-4c1e-9cb0-8d4951beb863.png)
+
+* Multiple Azure subscriptions can establish a trust relationship with an instance of Azure Active Directory (Azure AD) in order to authenticate and authorize security principals and devices against Azure services.  
+* Each subscription can only trust a single directory.
+* When a user signs up for a Microsoft cloud service - Azure, a new default Azure AD tenant is created and the user is made a member of the Global Administrator role. 
+
+![image](https://user-images.githubusercontent.com/68102477/129507294-b8f1ccb7-df19-45f0-9865-f79838f98b0d.png)
+
+### Associate a subscription to a directory
+**It can take several hours for the Subscrition to switch to the new Active Directory**
+![image](https://user-images.githubusercontent.com/68102477/129507718-90b33e71-a46e-487b-b4ef-42fb3cffea1f.png)
+
+
+
+
 
 
 
