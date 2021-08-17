@@ -13,6 +13,10 @@
 ## Create linked service for Azure Key Vault
 ![image](https://user-images.githubusercontent.com/68102477/129680469-b317e8be-e89f-40fd-8579-c74471a20956.png)
 ![image](https://user-images.githubusercontent.com/68102477/129683654-d631f115-08e2-432a-837d-f53c36ebf7b7.png)
+![image](https://user-images.githubusercontent.com/68102477/129683963-df06c91a-92fb-4ba9-ab14-e8a551bd7160.png)
+**This linked service contains the connection information to the Databricks cluster:**
+![image](https://user-images.githubusercontent.com/68102477/129684258-c98928fb-643a-449d-9793-8f3c7e8b8d82.png)
+## [FINALLY CREATE AN AZURE DATA FACTORY PIPELINE THAT EXECUTES A DATABRICKS NOTEBOOK AGAINST THE DATABRICKS JOBS CLUSTER](https://docs.microsoft.com/en-us/azure/data-factory/transform-data-using-databricks-notebook)
 
 
 
