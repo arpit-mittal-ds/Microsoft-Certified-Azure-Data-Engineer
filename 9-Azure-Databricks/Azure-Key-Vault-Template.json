@@ -1,0 +1,69 @@
+{
+    "$schema": "http://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+        "name": {
+            "type": "String"
+        },
+        "location": {
+            "type": "String"
+        },
+        "sku": {
+            "type": "String"
+        },
+        "accessPolicies": {
+            "type": "Array"
+        },
+        "tenant": {
+            "type": "String"
+        },
+        "enabledForDeployment": {
+            "type": "Bool"
+        },
+        "enabledForTemplateDeployment": {
+            "type": "Bool"
+        },
+        "enabledForDiskEncryption": {
+            "type": "Bool"
+        },
+        "enableRbacAuthorization": {
+            "type": "Bool"
+        },
+        "enableSoftDelete": {
+            "type": "Bool"
+        },
+        "softDeleteRetentionInDays": {
+            "type": "Int"
+        },
+        "networkAcls": {
+            "type": "Object"
+        }
+    },
+    "variables": {},
+    "resources": [
+        {
+            "type": "Microsoft.KeyVault/vaults",
+            "apiVersion": "2018-02-14",
+            "name": "[parameters('name')]",
+            "location": "[parameters('location')]",
+            "dependsOn": [],
+            "tags": {},
+            "properties": {
+                "enabledForDeployment": "[parameters('enabledForDeployment')]",
+                "enabledForTemplateDeployment": "[parameters('enabledForTemplateDeployment')]",
+                "enabledForDiskEncryption": "[parameters('enabledForDiskEncryption')]",
+                "enableRbacAuthorization": "[parameters('enableRbacAuthorization')]",
+                "accessPolicies": "[parameters('accessPolicies')]",
+                "tenantId": "[parameters('tenant')]",
+                "sku": {
+                    "name": "[parameters('sku')]",
+                    "family": "A"
+                },
+                "enableSoftDelete": "[parameters('enableSoftDelete')]",
+                "softDeleteRetentionInDays": "[parameters('softDeleteRetentionInDays')]",
+                "networkAcls": "[parameters('networkAcls')]"
+            }
+        }
+    ],
+    "outputs": {}
+}
