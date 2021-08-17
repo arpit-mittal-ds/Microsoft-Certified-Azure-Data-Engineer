@@ -1,0 +1,10 @@
+{
+	"name": "DevKeyVaultDatabricks",
+	"properties": {
+		"annotations": [],
+		"type": "AzureKeyVault",
+		"typeProperties": {
+			"baseUrl": "https://arpitkeyvault.vault.azure.net/"
+		}
+	}
+}
