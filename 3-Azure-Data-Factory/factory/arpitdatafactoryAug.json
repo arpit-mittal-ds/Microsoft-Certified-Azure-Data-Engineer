@@ -1,0 +1,9 @@
+{
+	"name": "arpitdatafactoryAug",
+	"location": "centralus",
+	"identity": {
+		"type": "SystemAssigned",
+		"principalId": "6f5a3936-1b95-4c17-9b77-0cbbeaba3661",
+		"tenantId": "02f9f3f3-c219-4bb9-b092-6eeaa9ab71c3"
+	}
+}
