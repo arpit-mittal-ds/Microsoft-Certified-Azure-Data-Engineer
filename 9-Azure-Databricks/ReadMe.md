@@ -17,6 +17,17 @@
 **This linked service contains the connection information to the Databricks cluster:**
 ![image](https://user-images.githubusercontent.com/68102477/129684258-c98928fb-643a-449d-9793-8f3c7e8b8d82.png)
 ## [FINALLY CREATE AN AZURE DATA FACTORY PIPELINE THAT EXECUTES A DATABRICKS NOTEBOOK AGAINST THE DATABRICKS JOBS CLUSTER](https://docs.microsoft.com/en-us/azure/data-factory/transform-data-using-databricks-notebook)
+![image](https://user-images.githubusercontent.com/68102477/129703302-2b782282-bf8f-4018-bbeb-d0844087d37f.png)
+![image](https://user-images.githubusercontent.com/68102477/129704300-8f293915-6590-4547-86d7-6404fa7eeb15.png)
+![image](https://user-images.githubusercontent.com/68102477/129705427-9a3855e3-9314-4a5d-b685-4095902fd0d6.png)
+
+
+
+
+
+
+
+
 
 
 
