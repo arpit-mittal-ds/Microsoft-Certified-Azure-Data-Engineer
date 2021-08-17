@@ -12,7 +12,7 @@
 					"type": "LinkedServiceReference"
 				},
 				"secretName": "Dev-Databricks-Token",
-				"secretVersion": "arpitmittal"
+				"secretVersion": "a386ea67307e45819b627d4f10df8293"
 			},
 			"existingClusterId": "arpitcluster"
 		}
