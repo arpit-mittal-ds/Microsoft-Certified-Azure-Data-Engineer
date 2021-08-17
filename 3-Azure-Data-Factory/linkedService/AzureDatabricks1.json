@@ -1,0 +1,20 @@
+{
+	"name": "AzureDatabricks1",
+	"properties": {
+		"annotations": [],
+		"type": "AzureDatabricks",
+		"typeProperties": {
+			"domain": "https://adb-5412860288720468.8.azuredatabricks.net",
+			"accessToken": {
+				"type": "AzureKeyVaultSecret",
+				"store": {
+					"referenceName": "DevKeyVaultDatabricks",
+					"type": "LinkedServiceReference"
+				},
+				"secretName": "Dev-Databricks-Token",
+				"secretVersion": "arpitmittal"
+			},
+			"existingClusterId": "arpitcluster"
+		}
+	}
+}
