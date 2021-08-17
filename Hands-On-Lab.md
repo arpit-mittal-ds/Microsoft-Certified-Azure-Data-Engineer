@@ -1,6 +1,23 @@
 
 # [AZURE DATA ENGINEER](https://docs.microsoft.com/en-us/learn/certifications/azure-data-engineer/)
 
+## What is Azure
+
+
+## [How Does Azure work ?](https://docs.microsoft.com/en-us/azure/cloud-adoption-framework/get-started/what-is-azure)
+
+Azure uses a technology known as virtualization.
+
+Virtualization separates the tight coupling between a computer's CPU and its operating system using an abstraction layer called a hypervisor.
+
+The hypervisor emulates all the functions of a real computer and its CPU in a virtual machine.
+
+It can run multiple virtual machines at the same time, and each virtual machine can run any compatible operating system such as Windows or Linux.
+
+Azure takes this virtualization technology and repeats it on a massive scale in Microsoft data centers throughout the world.
+
+Each data center has many racks filled with servers. Each server includes a hypervisor to run multiple virtual machines.
+
 ## Understand the evolving world of data 
 
 Over the last decade, the amount of data that systems and devices generate has increased significantly. Because of this increase, new technologies, roles, and approaches to working with data are affecting data professionals
@@ -146,9 +163,23 @@ Authentication establishes the user's identity, but authorization is the process
 
 ![image](https://user-images.githubusercontent.com/68102477/129507294-b8f1ccb7-df19-45f0-9865-f79838f98b0d.png)
 
+### Subscription: A logical container for your resources. 
+* Each Azure resource is associated with only one subscription. 
+
+**Azure account:** The email address that you provide when you create an Azure subscription is the Azure account for the subscription. The party that's associated with the email account is responsible for the monthly costs that are incurred by the resources in the subscription. **Each subscription is associated with only one Azure account.**
+
+**Azure AD tenant:** A dedicated and trusted instance of Azure AD. An Azure AD tenant is automatically created when your organization first signs up for a Microsoft cloud service subscription like Microsoft Azure. An Azure tenant represents a single organization.
+
+**Resource groups:** Logical containers that you use to group related resources in a subscription. Each resource can exist in only one resource group. 1 Subscription can have multiple Resource groups, representing a grouping within a subscription, and are commonly used to represent a collection of assets required to support a workload, application, or specific function within a subscription.
+
 ### Associate a subscription to a directory
 **It can take several hours for the Subscrition to switch to the new Active Directory**
 ![image](https://user-images.githubusercontent.com/68102477/129507718-90b33e71-a46e-487b-b4ef-42fb3cffea1f.png)
+
+
+### Create a new user
+
+![image](https://user-images.githubusercontent.com/68102477/129646761-8e539e93-f8bb-4a15-9f86-13b9c0f74829.png)
 
 
 
@@ -315,6 +346,45 @@ To ingest data into your system, use Azure Data Factory, Storage Explorer, the A
 Azure Storage also provides you with fine-grained control over who has access to your data. You'll secure the data by using keys or shared access signatures. 
 
 Azure Resource Manager provides a permissions model that uses role-based access control (RBAC). Use this functionality to set permissions and assign roles to users, groups, or applications.
+
+### [Secure your Azure Storage account](https://docs.microsoft.com/en-us/learn/modules/secure-azure-storage-account/2-storage-security-features)
+
+**1. Protect the data at rest**
+ - All data written to Azure Storage is automatically encrypted by Storage Service Encryption (SSE) with a 256-bit Advanced Encryption Standard (AES) cipher
+ -  It can't be disabled.
+ -  Azure Key Vault stores the keys automatically to help you control and manage the disk-encryption keys and secrets.
+
+![image](https://user-images.githubusercontent.com/68102477/129651144-82d808a4-2468-46c4-ad00-9c107dcd8e25.png)
+
+
+**2. Protect the data in transit**
+ - Has to be ENABLED
+ - After you enable secure transfer, connections that use HTTP will be refused. 
+ - HTTPS have to be used, by the APIs, after TLS has been enabled
+
+
+**3. Control who can access data - ACCOUNT KEY vs SHARED ACCESS SIGNATURE**
+
+**3.A. Storage account keys – for admin only**
+
+In Azure Storage accounts, shared keys are called storage account keys. Azure creates two of these keys (primary and secondary) for each storage account you create. The keys give access to everything in the account.
+You'll find the storage account keys in the Azure portal view of the storage account. Just select Settings > Access keys.
+Because these keys are powerful, use them only with trusted in-house applications that you control completely. If the keys are compromised, change the key values in the Azure portal. 
+Only for admin - Not for Storage Users.
+Re-generate periodically.
+Never share with external third party Apps. Use SAS instead.
+
+* The client embeds the shared key in the HTTP Authorization header of every request, and the Storage account validates the key.
+
+![image](https://user-images.githubusercontent.com/68102477/129652051-00557881-3743-4fa4-b255-05f51c3c435c.png)
+You can easily authenticate and access Azure Data Lake Storage Gen2 (ADLS Gen2) storage accounts using an Azure storage account access key
+
+**[Example of using account keys](https://docs.databricks.com/data/data-sources/azure/adls-gen2/azure-datalake-gen2-get-started.html)
+
+**3.B. shared access signature (SAS)** is a URI that grants restricted access rights to Azure Storage resources. You can provide a shared access signature to clients who should not be trusted with your storage account key but whom you wish to delegate access to certain storage account resources. By distributing a shared access signature URI to these clients, you grant them access to a resource for a specified period of time.
+
+**4. Audit storage access**
+
 
 
 ## Data storage in Azure Data Lake Storage ADLS
