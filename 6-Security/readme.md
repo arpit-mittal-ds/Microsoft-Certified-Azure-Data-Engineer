@@ -1,19 +1,97 @@
-Identity has become the new primary security boundary. Accurately proving that someone is a valid user of your system, with an appropriate level of access, is critical to maintaining control of your data. This identity layer is now more often the target of attack than the network is.
 
+# SECURITY
 
-Compare authentication and authorization
+### What is Identity 
+* a thing that gets authenticated such as username, email id, etc.
 
-Two fundamental concepts that you need to understand when talking about identity and access are authentication (AuthN) and authorization (AuthZ).
+### authentication (AuthN) and authorization (AuthZ)
+### What is Authentication
+* Process of verification / assertion of identity.
 
-Authentication and authorization both support everything else that happens. They occur sequentially in the identity and access process.
-
-For example, all employees can access inventory and pricing software, but only store managers can access payroll and certain accounting software.
-
-What is authentication?
-Authentication is the process of establishing the identity of a person or service that wants to access a resource. It involves the act of challenging a party for legitimate credentials and provides the basis for creating a security principal for identity and access control. It establishes whether the user is who they say they are.
-
-What is authorization?
+### What is authorization?
 Authentication establishes the user's identity, but authorization is the process of establishing what level of access an authenticated person or service has. It specifies what data they're allowed to access and what they can do with it.
+
+
+### Problems with Classic Approach of Client and Server Authentication
+![image](https://user-images.githubusercontent.com/68102477/129502674-591de703-0f13-42d1-ae1b-bc3e18d79ff4.png)
+
+![image](https://user-images.githubusercontent.com/68102477/129502711-df17ec50-45d9-47e7-8b1e-a9801e803ce1.png)
+
+### Using Azure AD for Identity Management or Authenticatiion between Client and Server
+
+![image](https://user-images.githubusercontent.com/68102477/129502875-71532a4e-4a29-4702-90a8-c1c6ea0715d4.png)
+
+![image](https://user-images.githubusercontent.com/68102477/129502946-54f0f91e-ede8-41ae-844d-02767f940159.png)
+
+
+## What is Azure Active Directory?
+
+* Azure AD is Microsoft's cloud-based identity and access management service.
+
+* A tenant is a representation of an organization. A tenant is typically separated from other tenants and has its own identity.
+
+**Azure AD provides services such as:**
+
+**Authentication** - verifying identity to access applications and resources. It also includes providing functionality such as self-service password reset, multifactor authentication, a custom list of banned passwords, and smart lockout services.
+
+**Single sign-on** - enables a user to sign in one time and use that credential to access multiple resources and applications from different providers. A single identity is tied to a user, which simplifies the security model. 
+
+
+### We already use Azure AD to do a single-sign-on while using various Microsoft's Services
+### Basically if we have logged on to one service then we do not require to log on to another one
+![image](https://user-images.githubusercontent.com/68102477/129502270-d03c51df-e793-4e3e-b78b-78f624c2fd65.png)
+
+### Again in Azure CLoud resources we use Azure AD CENTRALIZED service to authenticate to various Azure cloud resources
+![image](https://user-images.githubusercontent.com/68102477/129502356-3afa5331-89b9-4652-bc4c-f0a3d8d97f68.png)
+
+### Demo
+
+* CREATE A NEW ACTIVE DIRECTORY
+* ASSOCIATE THE EXISTING SUBSCRIPTION TO THE NEW ACTIVE DIRECTORY
+
+![image](https://user-images.githubusercontent.com/68102477/129505604-c7442474-b809-4519-bd29-9ba751b203b2.png)
+
+![image](https://user-images.githubusercontent.com/68102477/129505623-45ced121-27dc-4bce-8de6-4635fb0bfa3b.png)
+
+![image](https://user-images.githubusercontent.com/68102477/129506026-6e1699e9-2aae-47be-a6ea-27e3fbda9156.png)
+
+
+
+### [Relationship between Subscription and Active Directory](https://docs.microsoft.com/en-gb/azure/active-directory/fundamentals/active-directory-how-subscriptions-associated-directory?amp;clcid=0x9)
+
+**Newly Created Active Directory (and associated tenant and organization) will not have access to the Subscription present in previous Default Directory
+![image](https://user-images.githubusercontent.com/68102477/129506461-b73fdcb8-9cfe-4c1e-9cb0-8d4951beb863.png)
+
+* Multiple Azure subscriptions can establish a trust relationship with an instance of Azure Active Directory (Azure AD) in order to authenticate and authorize security principals and devices against Azure services.  
+* Each subscription can only trust a single directory.
+* When a user signs up for a Microsoft cloud service - Azure, a new default Azure AD tenant is created and the user is made a member of the Global Administrator role. 
+
+![image](https://user-images.githubusercontent.com/68102477/129507294-b8f1ccb7-df19-45f0-9865-f79838f98b0d.png)
+
+### Subscription: A logical container for your resources. 
+* Each Azure resource is associated with only one subscription. 
+
+**Azure account:** The email address that you provide when you create an Azure subscription is the Azure account for the subscription. The party that's associated with the email account is responsible for the monthly costs that are incurred by the resources in the subscription. **Each subscription is associated with only one Azure account.**
+
+**Azure AD tenant:** A dedicated and trusted instance of Azure AD. An Azure AD tenant is automatically created when your organization first signs up for a Microsoft cloud service subscription like Microsoft Azure. An Azure tenant represents a single organization.
+
+**Resource groups:** Logical containers that you use to group related resources in a subscription. Each resource can exist in only one resource group. 1 Subscription can have multiple Resource groups, representing a grouping within a subscription, and are commonly used to represent a collection of assets required to support a workload, application, or specific function within a subscription.
+
+### Associate a subscription to a directory
+**It can take several hours for the Subscrition to switch to the new Active Directory**
+![image](https://user-images.githubusercontent.com/68102477/129507718-90b33e71-a46e-487b-b4ef-42fb3cffea1f.png)
+
+
+### Create a new user
+
+![image](https://user-images.githubusercontent.com/68102477/129646761-8e539e93-f8bb-4a15-9f86-13b9c0f74829.png)
+
+
+
+
+
+
+
 
 ![image](https://user-images.githubusercontent.com/68102477/129080269-832a0d1e-b495-4fb5-b903-9c01e8123fd2.png)
 
@@ -22,41 +100,8 @@ Authentication establishes the user's identity, but authorization is the process
 The identification card represents credentials that the user has to prove their identity (you'll learn more about the types of credentials later in this module.) Once authenticated, authorization defines what kinds of applications, resources, and data that user can access.
 
 
-What is Azure Active Directory?
-
-Tailwind Traders already uses Active Directory to secure its on-premises environments. The company doesn't want its users to have a different username and password to remember for accessing applications and data in the cloud. Can the company integrate its existing Active Directory instance with cloud identity services to create a seamless experience for its users?
-
-For on-premises environments, Active Directory running on Windows Server provides an identity and access management service that's managed by your own organization. Azure AD is Microsoft's cloud-based identity and access management service.
-
-A tenant is a representation of an organization. A tenant is typically separated from other tenants and has its own identity.
 
 
-Azure AD provides services such as:
-
-Authentication
-
-This includes verifying identity to access applications and resources. It also includes providing functionality such as self-service password reset, multifactor authentication, a custom list of banned passwords, and smart lockout services.
-
-Single sign-on
-What's single sign-on?
-Single sign-on enables a user to sign in one time and use that credential to access multiple resources and applications from different providers.
-
-More identities mean more passwords to remember and change
-SSO enables you to remember only one username and one password to access multiple applications. A single identity is tied to a user, which simplifies the security model. Application management
-
-You can manage your cloud and on-premises apps by using Azure AD.
-
-Application management
-
-You can manage your cloud and on-premises apps by using Azure AD.
-
-Device management
-
-Along with accounts for individual people, Azure AD supports the registration of devices. 
-
-
-
-Connecting Active Directory with Azure AD enables you to provide a consistent identity experience to your users.
 
 There are a few ways to connect your existing Active Directory installation with Azure AD. Perhaps the most popular method is to use Azure AD Connect.
 
@@ -70,6 +115,23 @@ There are a few ways to connect your existing Active Directory installation with
 ![image](https://user-images.githubusercontent.com/68102477/129120720-97629bdb-fe86-4caa-892f-129ba89cdf2c.png)
 
 ![image](https://user-images.githubusercontent.com/68102477/129120729-70b6703c-1ff2-441b-bee1-23d123fe0b92.png)
+
+![image](https://user-images.githubusercontent.com/68102477/129121244-6c814e39-6068-4d6c-8beb-56dc2c413b49.png)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 ![image](https://user-images.githubusercontent.com/68102477/129121244-6c814e39-6068-4d6c-8beb-56dc2c413b49.png)
 
