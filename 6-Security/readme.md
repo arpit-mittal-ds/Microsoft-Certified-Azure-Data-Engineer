@@ -88,54 +88,6 @@ Authentication establishes the user's identity, but authorization is the process
 
 
 
-![image](https://user-images.githubusercontent.com/68102477/129121244-6c814e39-6068-4d6c-8beb-56dc2c413b49.png)
-
-## COMMAND LINE TOOLS (BASH OR POWERSHELL)
-
-![image](https://user-images.githubusercontent.com/68102477/129121314-e18bdeb0-ba23-4a30-b48e-4d3d1e04ed40.png)
-
-![image](https://user-images.githubusercontent.com/68102477/129121414-aadc3740-8746-425c-928b-9a957c5f069f.png)
-
-![image](https://user-images.githubusercontent.com/68102477/129121669-d735e59f-3d11-4dfa-81a4-03390a7d479a.png)
-
-### Azure Resource Group 
-
-* A logical grouping of few resources on Azure which share the same lifecycle.
-
-
-### Azure Subscription
-
-![image](https://user-images.githubusercontent.com/68102477/129122479-18b69377-00f7-4196-b766-5a2464d1a05e.png)
-
-### Azure Resource Manager (ARM) - ARM Templates
-
-![image](https://user-images.githubusercontent.com/68102477/129136394-b4bbbe2a-1edc-4ef3-be48-a8f211b5f1c2.png)
-
-![image](https://user-images.githubusercontent.com/68102477/129182626-3debf122-2bfa-4c41-9f36-f64c1445a109.png)
-
-
-### Using Powershell - can get all the commands for Azure
-
-![image](https://user-images.githubusercontent.com/68102477/129182575-95e7d93c-87d9-4a72-902f-7be50c3520c3.png)
-
-
-![image](https://user-images.githubusercontent.com/68102477/129182889-2ae720a7-08b1-4e94-9bb0-18ae1e988106.png)
-
-![image](https://user-images.githubusercontent.com/68102477/129183283-a99547ac-b0a1-4dc1-9cef-96750128cb05.png)
-
-
-## AZURE IDENTITY MANAGEMENT
-
-![image](https://user-images.githubusercontent.com/68102477/129183442-805eb095-439e-4b4b-9c83-e91c34381996.png)
-
-
-
-
-
-
-
-
-
 
 
 
