@@ -88,51 +88,6 @@ Authentication establishes the user's identity, but authorization is the process
 
 
 
-
-
-
-
-
-![image](https://user-images.githubusercontent.com/68102477/129080269-832a0d1e-b495-4fb5-b903-9c01e8123fd2.png)
-
-![image](https://user-images.githubusercontent.com/68102477/129120635-3a65ae36-f5f3-484b-888d-4d76ac900593.png)
-
-The identification card represents credentials that the user has to prove their identity (you'll learn more about the types of credentials later in this module.) Once authenticated, authorization defines what kinds of applications, resources, and data that user can access.
-
-
-
-
-
-There are a few ways to connect your existing Active Directory installation with Azure AD. Perhaps the most popular method is to use Azure AD Connect.
-
-
-![image](https://user-images.githubusercontent.com/68102477/129120658-1b2e56d5-0659-461b-879a-f1a5c7b0d5d9.png)
-
-![image](https://user-images.githubusercontent.com/68102477/129120675-fe671ae0-059c-469d-a8f2-821dd6fe85ea.png)
-
-![image](https://user-images.githubusercontent.com/68102477/129120706-af0ab132-2f88-4028-b42f-4dd74564a18b.png)
-
-![image](https://user-images.githubusercontent.com/68102477/129120720-97629bdb-fe86-4caa-892f-129ba89cdf2c.png)
-
-![image](https://user-images.githubusercontent.com/68102477/129120729-70b6703c-1ff2-441b-bee1-23d123fe0b92.png)
-
-![image](https://user-images.githubusercontent.com/68102477/129121244-6c814e39-6068-4d6c-8beb-56dc2c413b49.png)
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 ![image](https://user-images.githubusercontent.com/68102477/129121244-6c814e39-6068-4d6c-8beb-56dc2c413b49.png)
 
 ## COMMAND LINE TOOLS (BASH OR POWERSHELL)
