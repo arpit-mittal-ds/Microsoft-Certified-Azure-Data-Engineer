@@ -1,21 +1,13 @@
-# AZURE SYNAPSE ANALYTICS
 
+# SYNAPSE
 
 Azure Synapse Analytics is an integrated analytics platform, which combines data warehousing, big data analytics, data integration, and visualization into a single environment. 
 
 This implements a data warehouse using a dedicated SQL pool that leverages the Massively Parallel Processing engine that brings together enterprise data warehousing and Big Data analytics.
 
 
-## How Azure Synapse Analytics works
+## [CREATE A SYNAPSE WORKSPACE](https://docs.microsoft.com/en-gb/azure/synapse-analytics/get-started-create-workspace)
 
-Azure Synapse SQL is a distributed query system that enables you to implement data warehousing using standard T-SQL familiar to data engineers.
-
-Azure Synapse SQL is a distributed query system that enables you to implement data warehousing and data virtualization scenarios using standard T-SQL experiences familiar to data engineers.
-
-Azure Synapse Studio  - Web UI to be able to access all Azure Synapse Analytics capabilities
-
-
-## Create Azure Synapse Analytics workspace
 
 This deployment creates several resources which include an **Azure Data Lake Storage Gen2 account that acts as the primary storage and the container to store workspace data. **
 
@@ -41,7 +33,13 @@ Dedicated SQL pools represent a collection of analytic resources that are being 
 
 The serverless model is ideal for unplanned or ad hoc workloads that the diagnostic analytics approach would generate.
 
-### Apache Spark in Azure Synapse Analytics
+## [ANALYZE DATA WITH A SERVERLESS SQL POOL](https://docs.microsoft.com/en-gb/azure/synapse-analytics/get-started-analyze-sql-on-demand)
+
+
+## [CREATE A SERVERLESS APACHE SPARK POOL](https://docs.microsoft.com/en-gb/azure/synapse-analytics/get-started-analyze-sql-pool)
+
+## ANALYZE DATA WITH APACHE SPARK POOL
+
 
 Big data workloads are defined as workloads to handle data that is too large or complex for traditional database systems. Apache Spark processes large amounts of data in memory, which boosts the performance of analyzing big data more effectively, and this capability is available within Azure Synapse Analytics, and is referred to as Spark pools.
 
@@ -59,17 +57,21 @@ If you already have a Spark implementation in place already, Azure Synapse Analy
 
 So 3 options - Synapse SQL, Synapse Spark Pools, Azure Databricks.
 
-### [Create pools(sql pool or spark pool) in Azure Synapse Analytics](https://docs.microsoft.com/en-gb/learn/modules/survey-components-of-azure-synapse-analytics/6-exercise-create-pools)
+
+
+## [CREATE A DEDICATED SQL POOL](https://docs.microsoft.com/en-gb/azure/synapse-analytics/get-started-analyze-sql-pool)
+
+## ANALYZE DATA WITH DEDICATED SQL POOLS
+
+
+## [ANALYZE DATA IN A STORAGE ACCOUNT](https://docs.microsoft.com/en-gb/azure/synapse-analytics/get-started-analyze-storage)
 
 
 
-### Apache Spark architecture
-
-![image](https://user-images.githubusercontent.com/68102477/129022367-92e8ae53-8c37-445f-8c95-b256bce935ab.png)
+## [INTEGRATE WITH PIPELINES](https://docs.microsoft.com/en-gb/azure/synapse-analytics/get-started-pipelines)
 
 
-Spark pools in Azure Synapse Analytics offer a fully managed Spark service. The benefits of creating a Spark pool in Synapse Analytics include.
-
+# [AZURE DATA LAKE](https://github.com/MSRConnections/Azure-training-course/blob/master/Content/Data%20Lake/Azure%20Data%20Lake%20HOL.md)
 
 
 
@@ -95,7 +97,10 @@ Azure Synapse Analytics is designed to simplify this process with limitless scal
 
 ![image](https://user-images.githubusercontent.com/68102477/125713372-3f052519-ab7e-40e2-91a2-76c06d5e67ee.png)
 
- Design a Modern Data Warehouse using Azure Synapse Analytics
+
+
+
+
  
 # Describe a Modern Data Warehouse
 
