@@ -1,3 +1,40 @@
+
+
+## AZURE DATA STORAGE
+
+### Understand types of data and then map them to correct Azure data platform technologies / Choose a data storage approach in Azure
+
+**Classify your data**
+
+**Structured data** - data structure is defined at design time -  in the form of tables. Relational systems react slowly to changes in data requirements because the structural database needs to change every time a data requirement changes. When new columns are added, you might need to bulk-update all existing records to populate the new column throughout the table.
+
+**Un-structured data** - In non-relational systems, the data structure isn't defined at design time, and data is typically loaded in its raw format. The data structure is defined only when the data is read.
+
+
+
+## What is an AZURE STORAGE ?
+
+* Azure provides many ways to store your data. There are multiple database options like Azure SQL Database, Azure Cosmos DB, and Azure Table Storage. Azure offers multiple ways to store and send messages, such as Azure Queues and Event Hubs. You can even store loose files using services like Azure Files and Azure Blobs.
+
+* **Azure selected four of these DATA SERVICES and placed them together under the name AZURE STORAGE.** The four services are Azure Blobs, Azure Files, Azure Queues, and Azure Tables. The following illustration shows the elements of Azure Storage.
+
+![image](https://user-images.githubusercontent.com/68102477/129471705-e305aafc-b16a-4fc7-9878-429f5e80d721.png)
+
+* These four were given special treatment because they are all **primitive, cloud-based storage services and are often used together in the same application.**
+
+## What is an AZURE STORAGE ACCOUNT?
+
+**A storage account is a container that groups a set of Azure Storage services together. Only data services from Azure Storage can be included in a storage account (Azure Blobs, Azure Files, Azure Queues, and Azure Tables).** The following illustration shows a storage account containing several data services.
+
+![image](https://user-images.githubusercontent.com/68102477/129471753-68769d75-1af2-4d1c-a341-7f979bbef3a5.png)
+
+**Combining data services into a storage account lets you manage them as a group. The settings you specify when you create the account, or any that you change after creation, are applied to everything in the account.**
+
+### How many storage accounts do you need?
+
+**A storage account represents a collection of settings like location, replication strategy, and subscription owner. You need one storage account for every group of settings that you want to apply to your data.**
+
+
 # Azure Storage offers four configuration options:
 
 ## Azure Blob: A scalable object store for text and binary data.
