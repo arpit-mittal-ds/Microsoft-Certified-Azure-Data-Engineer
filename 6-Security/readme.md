@@ -92,3 +92,45 @@ Authentication establishes the user's identity, but authorization is the process
 
 
 
+### [Secure your Azure Storage account](https://docs.microsoft.com/en-us/learn/modules/secure-azure-storage-account/2-storage-security-features)
+
+**1. Protect the data at rest**
+ - All data written to Azure Storage is automatically encrypted by Storage Service Encryption (SSE) with a 256-bit Advanced Encryption Standard (AES) cipher
+ -  It can't be disabled.
+ -  Azure Key Vault stores the keys automatically to help you control and manage the disk-encryption keys and secrets.
+
+![image](https://user-images.githubusercontent.com/68102477/129651144-82d808a4-2468-46c4-ad00-9c107dcd8e25.png)
+
+
+**2. Protect the data in transit**
+ - Has to be ENABLED
+ - After you enable secure transfer, connections that use HTTP will be refused. 
+ - HTTPS have to be used, by the APIs, after TLS has been enabled
+
+
+**3. Control who can access data - ACCOUNT KEY vs SHARED ACCESS SIGNATURE**
+
+**3.A. Storage account keys – for admin only**
+
+In Azure Storage accounts, shared keys are called storage account keys. Azure creates two of these keys (primary and secondary) for each storage account you create. The keys give access to everything in the account.
+You'll find the storage account keys in the Azure portal view of the storage account. Just select Settings > Access keys.
+Because these keys are powerful, use them only with trusted in-house applications that you control completely. If the keys are compromised, change the key values in the Azure portal. 
+Only for admin - Not for Storage Users.
+Re-generate periodically.
+Never share with external third party Apps. Use SAS instead.
+
+* The client embeds the shared key in the HTTP Authorization header of every request, and the Storage account validates the key.
+
+![image](https://user-images.githubusercontent.com/68102477/129652051-00557881-3743-4fa4-b255-05f51c3c435c.png)
+You can easily authenticate and access Azure Data Lake Storage Gen2 (ADLS Gen2) storage accounts using an Azure storage account access key
+
+**[Example of using account keys](https://docs.databricks.com/data/data-sources/azure/adls-gen2/azure-datalake-gen2-get-started.html)
+
+**3.B. shared access signature (SAS)** is a URI that grants restricted access rights to Azure Storage resources. You can provide a shared access signature to clients who should not be trusted with your storage account key but whom you wish to delegate access to certain storage account resources. By distributing a shared access signature URI to these clients, you grant them access to a resource for a specified period of time.
+
+**4. Audit storage access**
+
+
+
+
+
