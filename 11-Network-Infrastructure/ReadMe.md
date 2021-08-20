@@ -114,6 +114,15 @@ Peered virtual network address space
 
 ![image](https://user-images.githubusercontent.com/68102477/130229283-3cc84b0e-cfd9-4613-a578-65b7142f9168.png)
 
+* service endpoint is connected from a subnet
+
+* difference b/w service enpoint and private endpoint
+
+* private endpoint is only for a particular service...not to whole account
+* private endpoint connection is via NIC
+
+![image](https://user-images.githubusercontent.com/68102477/130236536-3a4a7972-2f88-4c51-b60b-9a2c7ab6f8e0.png)
+
 
 
 
