@@ -80,6 +80,39 @@ Connection. Create a Connection resource to create a logical connection between 
 
 
 
+# ARCHITECT NETWORK INFRASTRUCTURE IN AZURE
+
+* You can put multiple VMs in a VNet (Virtual Network) and can let them communicate. Also you can put other services in that VNet.
+![image](https://user-images.githubusercontent.com/68102477/130219946-b646f4d0-b3f9-4a7b-8fcb-f60027e6f9ba.png)
+
+* While creating a VNet you specify a range of IP Addresses for the VMs.
+![image](https://user-images.githubusercontent.com/68102477/130220130-13fc4196-1e72-4f5d-a04c-acda2df2ec96.png)
+
+
+![image](https://user-images.githubusercontent.com/68102477/130220320-e59ad934-02da-4c86-b465-e7e8769c2411.png)
+
+![image](https://user-images.githubusercontent.com/68102477/130220372-422d18ff-5342-4701-991e-68746b3acd4c.png)
+
+Address space '10.0.0.0/16' overlaps with address space '10.0.0.0/16' of virtual network 'VNET1'. Virtual networks with overlapping address space cannot be peered. If you intend to peer these virtual networks, change address space '10.0.0.0/16'.
+Peered virtual network address space
+
+![image](https://user-images.githubusercontent.com/68102477/130220641-51c923d7-c9be-4372-992d-6d6d516f66fd.png)
+
+
+![image](https://user-images.githubusercontent.com/68102477/130220761-7c11e466-3ce8-4c35-bf7a-bd76b48a8faf.png)
+
+![image](https://user-images.githubusercontent.com/68102477/130220815-78d49cb4-a4a1-4a6b-9afe-5bf9a63bded0.png)
+
+### [SERVICE ENDPOINTS](https://docs.microsoft.com/en-us/azure/virtual-network/virtual-network-service-endpoints-overview)
+* Endpoints allow you to secure your critical Azure service resources to only your virtual networks. 
+* Service Endpoints enables private IP addresses in the VNet to reach the endpoint of an Azure service **without needing a public IP address**.
+
+![image](https://user-images.githubusercontent.com/68102477/130227735-f3055a24-2cbd-474f-9e1f-a2cacd01ad3c.png)
+
+**With service end point configured the traffic from VM (in a subnet) 
+![image](https://user-images.githubusercontent.com/68102477/130229077-b9e1e03a-8ec6-405f-9865-f3750a380ea8.png)
+
+![image](https://user-images.githubusercontent.com/68102477/130229283-3cc84b0e-cfd9-4613-a578-65b7142f9168.png)
 
 
 
@@ -98,6 +131,22 @@ Connection. Create a Connection resource to create a logical connection between 
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
 
 
 
