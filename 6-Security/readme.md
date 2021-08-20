@@ -122,6 +122,10 @@ A best practice is to create a separate vault for each deployment environment of
 
 ![image](https://user-images.githubusercontent.com/68102477/130159744-0eba9aba-43f4-4d2f-bef6-1dfd924922f4.png)
 
+![image](https://user-images.githubusercontent.com/68102477/130213824-f5bc954c-2e92-48b1-b4ed-3fd477b7ce3e.png)
+
+
+
 
 ### Problems with Classic Approach of Client and Server Authentication
 ![image](https://user-images.githubusercontent.com/68102477/129502674-591de703-0f13-42d1-ae1b-bc3e18d79ff4.png)
@@ -339,5 +343,8 @@ Azure Resource Graph enables full visibility into your environments by providing
 
 ![image](https://user-images.githubusercontent.com/68102477/130212381-0bd495cf-9d0c-47d8-a292-893b578c6cd6.png)
 
+## Combine Firewall Tools along with NSG
 
+![image](https://user-images.githubusercontent.com/68102477/130213302-800ebbf3-4c1f-412b-9f11-bdc92a78f63b.png)
+![image](https://user-images.githubusercontent.com/68102477/130213384-c599a39a-79ad-4a79-96b1-ded20be6ae73.png)
 
