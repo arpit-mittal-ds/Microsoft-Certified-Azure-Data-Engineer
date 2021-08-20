@@ -99,6 +99,7 @@ Key Vault's API uses Azure Active Directory to authenticate users and apps.
 Create Key Vaults for your applications
 A best practice is to create a separate vault for each deployment environment of each of your applications, such as development, test, and production.
 
+![image](https://user-images.githubusercontent.com/68102477/130159744-0eba9aba-43f4-4d2f-bef6-1dfd924922f4.png)
 
 
 ### Problems with Classic Approach of Client and Server Authentication
