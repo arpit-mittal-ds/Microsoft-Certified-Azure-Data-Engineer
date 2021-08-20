@@ -24,30 +24,26 @@ The more identities a user has to manage, the greater the risk of a credential-r
 ### SSO with Azure Active Directory
 Azure AD is a cloud-based identity service. It has built-in support for synchronizing with your on-premises Active Directory instance, or it can be used on its own. This means that all your applications, whether on-premises, in the cloud (including Microsoft 365), or even mobile, can share the same credentials. Administrators and developers can control access to data and applications by using centralized rules and policies configured in Azure AD.
 
-## Infrastructure protection
-
-It's critical to ensure that people and processes have only the rights they need to get their job done. Assigning incorrect access can result in data loss, data leakage, or unavailability of services.
- 
 
 ### Role-based access control (RBAC)
 Roles are defined as collections of access permissions or sets of permissions, like read-only or contributor, that users can be granted to access an Azure service instance.
  
 On Azure, users, groups, and roles are all stored in Azure Active Directory (Azure AD). The Azure Resource Manager API uses role-based access control to secure all resource access management within Azure.
+
+Consider the use of Sudo on a Bash prompt OR on Windows via Run as administrator. In both of those cases, you're still signed in as the same identity as before, but you've changed your role and hence your access permissions.
  
-### Service principals
+### WHAT IS A SERVICE PRINCIPAL?
 
 An identity is just a thing that can be authenticated. Obviously, this includes users with usernames and passwords. But it can also include applications or other servers, which might authenticate with secret keys or certificates.
 
 **A service principal is an identity that a service or application uses.** Like other identities, it can be assigned roles.
- 
-Consider the use of Sudo on a Bash prompt OR on Windows via Run as administrator. In both of those cases, you're still signed in as the same identity as before, but you've changed your role and hence your access permissions.
- 
-For example, your organization can assign its deployment scripts to run authenticated as a service principal. If that's the only identity that has permission to perform destructive actions, your organization has gone a long way toward making sure that the accidental resource deletion cannothappen.
+  
+For example, your organization can assign its deployment scripts to run authenticated as a service principal. If that's the only identity that has permission to perform destructive actions, your organization has gone a long way towards making sure that the accidental resource deletion do not happen.
 
-### Managed identities for Azure resources
+### what is MANAGED IDENTITY
 The creation of service principals can be a tedious process. There are also many touch points that can make maintaining service principals difficult. Managed identities for Azure resources are much easier and will do most of the work for you.
 
-A managed identity can be instantly created for any Azure service that supports it. (The list is constantly growing.) When you create a managed identity for a service, you're creating an account on the Azure AD tenant. Azure infrastructure will automatically take care of authenticating the service and managing the account. You can then use that account like any other Active Directory account, including letting the authenticated service securely access other Azure resources.
+**A managed identity** can be instantly created for any Azure service that supports it. (The list is constantly growing.) When you create a managed identity for a service, you're creating an account on the Azure AD tenant. Azure infrastructure will automatically take care of authenticating the service and managing the account. You can then use that account like any other Active Directory account, including letting the authenticated service securely access other Azure resources.
  
  
 ### What is encryption?
@@ -57,38 +53,17 @@ Encryption is the process of making data unreadable and unusable. To use or read
 
 **Asymmetric encryption** uses a public key and private key pair. Either key can encrypt but can't decrypt its own encrypted data. To decrypt, you need the paired key. Asymmetric encryption is used for things like TLS (used in HTTPS) and data signing.
  
- Encryption at rest
+### WHAT IS ENCRYPTION AT REST?
  Regardless of the storage mechanism, encryption of data at rest ensures that the stored data is unreadable without the keys and secrets needed to decrypt it. If an attacker obtained a hard drive with encrypted data and didn't have access to the encryption keys, the attacker would have great difficulty compromising the data. 
  
- Encryption in transit
+### WHAT IS ENCRYPTION IN TRANSIT?
 Data in transit is the data that's actively moving from one location to another, such as across the internet or through a private network. An organization can handle secure transfer by encrypting the data before sending it over a network, or setting up a secure channel to transmit unencrypted data between two systems. 
 
-## Identify and classify data
+### Identify and classify data
 
  The organization needs to start by identifying and classifying the types of data that it's storing, and align this with the business and regulatory requirements for the storage of data.
  
  ![image](https://user-images.githubusercontent.com/68102477/130044012-cde651bd-9ddc-453c-9dd6-23455e38b9d7.png)
-
-
-Encrypting raw storage
-Azure Storage encryption for data at rest helps you protect your data to meet your organizational security and compliance commitments. The Azure Storage platform automatically encrypts your data with 256-bit Advanced Encryption Standard (AES) encryption before persisting it to disk and then decrypts the data during retrieval.
-
-Encrypting secrets
-We've seen that the encryption services all use keys to encrypt and decrypt data. How do we ensure that the keys themselves are secure? You might also have passwords, connection strings, or other sensitive pieces of information that you need to securely store.
-
-Azure Key Vault is a cloud service that works as a secure store for secrets
-
-What is network security?
-Network security is protecting the communication of resources within and outside your network. The goal is to limit exposure at the network layer across your services and systems. 
-
-![image](https://user-images.githubusercontent.com/68102477/130046465-801a61c7-7131-407c-8159-0a8f1f04d53c.png)
-
-![image](https://user-images.githubusercontent.com/68102477/130046640-f814b9f3-b7db-4331-9636-46bd4c1786f4.png)
-
-Virtual network security
-Inside a virtual network, it's important to limit communication between resources to only what's required.
-
-For communication between virtual machines, network security groups are a critical piece to restrict unnecessary communication. 
 
 
 ### What is Identity 
@@ -99,7 +74,31 @@ For communication between virtual machines, network security groups are a critic
 * Process of verification / assertion of identity.
 
 ### What is authorization?
-Authentication establishes the user's identity, but authorization is the process of establishing what level of access an authenticated person or service has. It specifies what data they're allowed to access and what they can do with it.
+Authentication establishes the user's identity, but authorization is the process of establishing **what level of access** an authenticated person or service has. It specifies **what data they're allowed to access** and what they can do with it.
+
+**Examples**
+
+**Encrypting raw storage** - Azure Storage encryption for data at rest helps you protect your data to meet your organizational security and compliance commitments. The Azure Storage platform automatically encrypts your data with 256-bit Advanced Encryption Standard (AES) encryption before persisting it to disk and then decrypts the data during retrieval.
+
+### AZURE KEY VAULT
+
+**Encrypting secrets** - We've seen that the encryption services all use keys to encrypt and decrypt data. How do we ensure that the keys themselves are secure? You might also have passwords, connection strings, or other sensitive pieces of information that you need to securely store.
+
+
+### What is Azure Key Vault?
+
+**Azure Key Vault is a cloud service that works as a secure store for secrets**
+
+Azure Key Vault is a secret store: **a centralized cloud service for storing app secrets - configuration values like passwords and connection strings** that must remain secure at all times. Key Vault helps you control your apps' secrets by keeping them in a single central location and providing secure access, permissions control, and access logging.
+
+What is a secret in Key Vault?
+In Key Vault, a secret is a name-value pair of strings.
+
+Key Vault's API uses Azure Active Directory to authenticate users and apps. 
+
+Create Key Vaults for your applications
+A best practice is to create a separate vault for each deployment environment of each of your applications, such as development, test, and production.
+
 
 
 ### Problems with Classic Approach of Client and Server Authentication
@@ -177,19 +176,18 @@ Authentication establishes the user's identity, but authorization is the process
 ![image](https://user-images.githubusercontent.com/68102477/129646761-8e539e93-f8bb-4a15-9f86-13b9c0f74829.png)
 
 
-### What is Azure Key Vault?
 
-Azure Key Vault is a secret store: a centralized cloud service for storing app secrets - configuration values like passwords and connection strings that must remain secure at all times. Key Vault helps you control your apps' secrets by keeping them in a single central location and providing secure access, permissions control, and access logging.
+### What is network security?
+Network security is protecting the communication of resources within and outside your network. The goal is to limit exposure at the network layer across your services and systems. 
 
-What is a secret in Key Vault?
-In Key Vault, a secret is a name-value pair of strings.
+![image](https://user-images.githubusercontent.com/68102477/130046465-801a61c7-7131-407c-8159-0a8f1f04d53c.png)
 
-Key Vault's API uses Azure Active Directory to authenticate users and apps. 
+![image](https://user-images.githubusercontent.com/68102477/130046640-f814b9f3-b7db-4331-9636-46bd4c1786f4.png)
 
-Create Key Vaults for your applications
-A best practice is to create a separate vault for each deployment environment of each of your applications, such as development, test, and production.
+Virtual network security
+Inside a virtual network, it's important to limit communication between resources to only what's required.
 
-
+For communication between virtual machines, network security groups are a critical piece to restrict unnecessary communication. 
 
 
 
