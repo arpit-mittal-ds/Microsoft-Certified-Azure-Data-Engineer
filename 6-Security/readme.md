@@ -325,9 +325,19 @@ only allow Specific network protocol
 1. Create a Linux VM and installing Nginx, a popular web server, on that VM. 
 2. To make your web server accessible, you then create a network security group (NSG) rule that allows inbound access on port 80 (HTTP). 
 
+DETAILS IN THE ATTACHED SCRIPT.
+
+By default, a Linux VM's NSG allows network access only on port 22. This enables administrators to access the system. You need to also allow inbound connections on port 80, which allows access over HTTP.
+
+### [Welcome to Azure Resource Graph](https://docs.microsoft.com/en-us/azure/governance/resource-graph/overview)
+Azure Resource Graph enables full visibility into your environments by providing high performance and powerful query capability across all your resources.
+
+
 ![image](https://user-images.githubusercontent.com/68102477/130210424-d3d0f249-a748-409a-8a9e-885173fb181d.png)
 
+![image](https://user-images.githubusercontent.com/68102477/130212326-1fd6b463-a987-4718-9e69-ea1a3bd10525.png)
 
+![image](https://user-images.githubusercontent.com/68102477/130212381-0bd495cf-9d0c-47d8-a292-893b578c6cd6.png)
 
 
 
