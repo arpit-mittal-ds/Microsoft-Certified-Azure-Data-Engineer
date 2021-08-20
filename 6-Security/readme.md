@@ -11,13 +11,32 @@ is a strategy that employs a series of mechanisms to slow the advance of an atta
 
 **Confidentiality:** The principle of least privilege restricts access to information only to individuals explicitly granted access. This information includes protection of user passwords, remote access certificates, and email content.
 
+![image](https://user-images.githubusercontent.com/68102477/130203964-965f5edf-a8e4-49f7-9f65-190bff59e80e.png)
+
+
+
 **Integrity:** prevent unauthorized changes to information at rest or in transit. A common approach used in data transmission is for the sender to create a unique fingerprint of the data by using a one-way hashing algorithm. The hash is sent to the receiver along with the data. The receiver recalculates the data's hash and compares it to the original to ensure that the data wasn't lost or modified in transit.
+
+![image](https://user-images.githubusercontent.com/68102477/130204027-ee05914e-a3d1-463e-8033-8d37b32d8074.png)
 
 **Availability:** Ensure that services are available to authorized users. Denial-of-service attacks are a common cause of loss of availability to users. Natural disasters also drive system design to **prevent single points of failure and deploy multiple instances of an application to geo-dispersed locations.**
 
 ![image](https://user-images.githubusercontent.com/68102477/130031292-f1bbb218-906d-4b68-a723-e80f1470dcf0.png)
 
 ![image](https://user-images.githubusercontent.com/68102477/130203252-3ad909a3-5d85-43d3-9bd1-d6f56963a14e.png)
+
+![image](https://user-images.githubusercontent.com/68102477/130203484-a1fde788-29db-4a0a-8206-346a8cf9147a.png)
+![image](https://user-images.githubusercontent.com/68102477/130203506-fe7e1bd1-2c0f-4f82-a76a-22c52bbbb022.png)
+![image](https://user-images.githubusercontent.com/68102477/130203602-8318c948-4556-40f4-97d2-42da1439d106.png)
+![image](https://user-images.githubusercontent.com/68102477/130203644-3e107026-9468-4804-a265-4a4c3369ef74.png)
+![image](https://user-images.githubusercontent.com/68102477/130203729-a20acf54-03d0-455b-b7f9-ecc0912eab1d.png)
+![image](https://user-images.githubusercontent.com/68102477/130203800-641921d4-0692-401f-8e89-0167cdf64394.png)
+![image](https://user-images.githubusercontent.com/68102477/130203836-f4d42778-5dd8-43ec-b969-328e15683f97.png)
+
+
+
+
+
 
 
 ### Single sign-on
@@ -277,6 +296,36 @@ You can easily authenticate and access Azure Data Lake Storage Gen2 (ADLS Gen2) 
 * Respond to incidents using built in analytics
 
 ![image](https://user-images.githubusercontent.com/68102477/130156121-de20f7be-8c7a-4e09-a08c-35f600736b7e.png)
+
+## FIREWALL
+
+Is a network security device that **monitors** incoming and outgoing network **traffic** and decides whether to allow or block traffic based on defined set of security rules. 
+Example: 
+Allow traffic only from a range of IP addresses.
+only allow Specific network protocol 
+![image](https://user-images.githubusercontent.com/68102477/130205660-56cbc19a-40e4-43c3-8213-2a6cca7ea44a.png)
+![image](https://user-images.githubusercontent.com/68102477/130205884-8328f7a1-e1f1-4704-b2d0-a1b5a4c13ab6.png)
+
+### DDoS
+![image](https://user-images.githubusercontent.com/68102477/130206071-1d5a0578-9be9-4359-86ac-c0ffdd475950.png)
+
+![image](https://user-images.githubusercontent.com/68102477/130206170-1049c2b9-49a3-4551-b025-0f882ca38118.png)
+![image](https://user-images.githubusercontent.com/68102477/130206208-03beab46-0733-4a48-8f72-b5430c680f49.png)
+![image](https://user-images.githubusercontent.com/68102477/130206389-3aa05671-a02c-4505-8cbf-4c30f8a6f61c.png)
+
+### Filter network traffic by using NETWORK SECURITY GROUPS(a kind of firewall)
+
+* Basically NSG will contain multiple inbound and outboud security rules that enable us to filter traffic.
+![image](https://user-images.githubusercontent.com/68102477/130206641-15467f33-e0e1-4c4f-8403-5a1734fae8b9.png)
+* Each RULE specifies following properties:
+![image](https://user-images.githubusercontent.com/68102477/130206756-11c3493d-66fb-45d3-91b6-ba029354dec3.png)
+
+### [Exercise - Configure network access to a VM by using a network security group](https://docs.microsoft.com/en-us/learn/modules/secure-network-connectivity-azure/6-configure-access-network-security-group)
+
+1. Create a Linux VM and installing Nginx, a popular web server, on that VM. 
+2. To make your web server accessible, you then create a network security group (NSG) rule that allows inbound access on port 80 (HTTP). 
+
+![image](https://user-images.githubusercontent.com/68102477/130210424-d3d0f249-a748-409a-8a9e-885173fb181d.png)
 
 
 
