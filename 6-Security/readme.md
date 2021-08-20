@@ -17,6 +17,8 @@ is a strategy that employs a series of mechanisms to slow the advance of an atta
 
 ![image](https://user-images.githubusercontent.com/68102477/130031292-f1bbb218-906d-4b68-a723-e80f1470dcf0.png)
 
+![image](https://user-images.githubusercontent.com/68102477/130203252-3ad909a3-5d85-43d3-9bd1-d6f56963a14e.png)
+
 
 ### Single sign-on
 The more identities a user has to manage, the greater the risk of a credential-related security incident. 
