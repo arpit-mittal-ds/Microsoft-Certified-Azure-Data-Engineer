@@ -178,6 +178,12 @@ Update the local network gateway IP references
 
 
 
+![image](https://user-images.githubusercontent.com/68102477/130316108-9973e46b-5646-44d8-8d8e-5e3b0d1adf59.png)
+
+https://www.youtube.com/watch?v=5NMcM4zJPM4&list=PLGjZwEtPN7j-Q59JYso3L4_yoCjj2syrM&index=11
+
+https://www.youtube.com/watch?v=apYOtRpmPH8
+
 
 
 
