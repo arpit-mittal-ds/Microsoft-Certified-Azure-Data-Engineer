@@ -123,7 +123,17 @@ Peered virtual network address space
 
 ![image](https://user-images.githubusercontent.com/68102477/130236536-3a4a7972-2f88-4c51-b60b-9a2c7ab6f8e0.png)
 
+What is a subnet?
+A subnet, or subnetwork, is a network inside a network. Subnets make networks more efficient. Through subnetting, network traffic can travel a shorter distance without passing through unnecessary routers to reach its destination.
 
+![image](https://user-images.githubusercontent.com/68102477/130311477-32141d0e-195b-4cb0-a073-5b73b937435a.png)
+
+
+What do the different parts of an IP address mean?
+This section focuses on IPv4 addresses, which are presented in the form of four decimal numbers separated by periods, like 203.0.113.112
+Every IP address has two parts. The first part indicates which network the addre
+Why is subnetting necessary?
+As the previous example illustrates, the way IP addresses are constructed makes it relatively simple for Internet routers to find the right network to route data into. However, in a Class A network (for instance), there could be millions of connected devices, and it could take some time for the data to find the right device. This is why subnetting comes in handy: subnetting narrows down the IP address to usage within a range of devices.ss belongs to. The second part specifies the device within that network. However, the length of the "first part" changes depending on the network's class.
 
 ### [Prepare Azure and on-premises virtual networks by using Azure CLI commands](https://docs.microsoft.com/en-us/learn/modules/connect-on-premises-network-with-vpn-gateway/3-exercise-prepare-azure-and-on-premises-vnets-using-azure-cli-commands?ns-enrollment-type=LearningPath&ns-enrollment-id=learn.architect-network-infrastructure)
 
@@ -136,17 +146,28 @@ This VPN will allow your on-premises servers to connect to resources in Azure.
 
 ![image](https://user-images.githubusercontent.com/68102477/130303597-4062155f-c989-4058-afc8-a9e010d5191d.png)
 
+CREATE THE AZURE-SIDE RESOURCES
+* create the Azure-VNet-1 virtual network and the Services subnet
+* add the subnet (GatewaySubnet) to vnet - Azure-VNet-1 
+* create the LNG-HQ-Network LOCAL network gateway -ip-address 94.0.252.160 (This gateway represents the on-premises network that you're connecting to)
+
+CREATE THE SIMULATED ON-PREMISES NETWORK AND SUPPORTING RESOURCES
+* create the HQ-Network virtual network and the Applications subnet.
+* add subnet (GatewaySubnet) to vnet - HQ-Network ----same subnet is added to this VM as well.
+* create the LNG-Azure-VNet-1 LOCAL network gateway. --gateway-ip-address 94.0.252.160 - ip address is same
+
+Create the Azure-side VPN gateway
+* create the PIP-VNG-Azure-VNet-1 public IP address
+* create the VNG-Azure-VNet-1 virtual network
+* create the VNG-Azure-VNet-1 VIRTUAL network gateway.
 
 
+Create the on-premises VPN gateway
+* create the PIP-VNG-HQ-Network public IP address
+* create the VNG-HQ-Network virtual network
+* create the VNG-HQ-Network virtual network gateway.
 
-
-
-
-
-
-
-
-
+Update the local network gateway IP references
 
 
 
