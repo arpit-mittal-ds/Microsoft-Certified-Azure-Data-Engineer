@@ -125,9 +125,16 @@ Peered virtual network address space
 
 
 
+### [Prepare Azure and on-premises virtual networks by using Azure CLI commands](https://docs.microsoft.com/en-us/learn/modules/connect-on-premises-network-with-vpn-gateway/3-exercise-prepare-azure-and-on-premises-vnets-using-azure-cli-commands?ns-enrollment-type=LearningPath&ns-enrollment-id=learn.architect-network-infrastructure)
 
 
+deploy a site-to-site VPN
 
+This VPN will allow your on-premises servers to connect to resources in Azure. 
+
+![image](https://user-images.githubusercontent.com/68102477/130302869-675e2587-94ae-452a-b7af-94befdeae327.png)
+
+![image](https://user-images.githubusercontent.com/68102477/130303597-4062155f-c989-4058-afc8-a9e010d5191d.png)
 
 
 
