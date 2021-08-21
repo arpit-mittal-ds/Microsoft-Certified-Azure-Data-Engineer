@@ -123,6 +123,9 @@ Peered virtual network address space
 
 ![image](https://user-images.githubusercontent.com/68102477/130236536-3a4a7972-2f88-4c51-b60b-9a2c7ab6f8e0.png)
 
+### [Connect your on-premises network to Azure (site-to-site) with VPN Gateway](https://docs.microsoft.com/en-us/learn/modules/connect-on-premises-network-with-vpn-gateway/2-connect-on-premises-networks-to-azure-using-site-to-site-vpn-gateways?ns-enrollment-type=LearningPath&ns-enrollment-id=learn.architect-network-infrastructure)
+
+
 What is a subnet?
 A subnet, or subnetwork, is a network inside a network. Subnets make networks more efficient. Through subnetting, network traffic can travel a shorter distance without passing through unnecessary routers to reach its destination.
 
@@ -185,7 +188,7 @@ https://www.youtube.com/watch?v=5NMcM4zJPM4&list=PLGjZwEtPN7j-Q59JYso3L4_yoCjj2s
 https://www.youtube.com/watch?v=apYOtRpmPH8
 
 
-
+### [Azure ExpressRoute service ](https://docs.microsoft.com/en-us/learn/modules/connect-on-premises-network-with-expressroute/)
 
 
 
