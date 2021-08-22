@@ -127,6 +127,9 @@ Peered virtual network address space
 
 
 What is a subnet?
+
+* A subnet is a range of IP addresses in your virtual network, which can be used to isolate virtual machines from each other or from the Internet.
+
 A subnet, or subnetwork, is a network inside a network. Subnets make networks more efficient. Through subnetting, network traffic can travel a shorter distance without passing through unnecessary routers to reach its destination.
 
 ![image](https://user-images.githubusercontent.com/68102477/130311477-32141d0e-195b-4cb0-a073-5b73b937435a.png)
@@ -214,7 +217,13 @@ https://www.youtube.com/watch?v=apYOtRpmPH8
 
 ## CREATE A VIRTUAL MACHINE INSIDE AN EXISTING VIRTUAL NETWORK
 * YOU HAVE TO SELECT THE REGION AS SAME AS VIRTUAL NETWORK
-
+* Use a public IP address if you want to communicate with the virtual machine from outside the virtual network.
+* A network security group contains security rules that allow or deny inbound network traffic to, or outbound network traffic from, the virtual machine. To simplify management of security rules, it's recommended that you associate a network security group to individual subnets, rather than individual network interfaces within the subnet, whenever possible.
+![image](https://user-images.githubusercontent.com/68102477/130347317-c7615263-b4f4-4be7-b890-2b1201e67848.png)
+* Subnet Options are for some reason disabled.........not able to add subnets for this VNet
+![image](https://user-images.githubusercontent.com/68102477/130347380-b7aa784b-45a7-4cd3-b59a-2375ec1a12a7.png)
+* Created a new subnet in same Virtual Network
+![image](https://user-images.githubusercontent.com/68102477/130347588-e2edd6d1-28c5-4407-a63e-ab1afae8b2d7.png)
 
 
 
