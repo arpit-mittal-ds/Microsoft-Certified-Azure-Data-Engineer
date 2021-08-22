@@ -191,14 +191,45 @@ https://www.youtube.com/watch?v=apYOtRpmPH8
 ### [Azure ExpressRoute service ](https://docs.microsoft.com/en-us/learn/modules/connect-on-premises-network-with-expressroute/)
 
 
+## APPLICATION GATEWAY
+![image](https://user-images.githubusercontent.com/68102477/130338860-8d033d75-e890-4457-a0cb-2b20d2b4a643.png)
+* creating application gateway within a Virtual Network and within a subnet. 
+![image](https://user-images.githubusercontent.com/68102477/130339038-ea884655-11fa-4a20-87aa-568ff2b04524.png)
+### FRONTEND IP 
+**Traffic enters the application gateway via its frontend IP address(es). An application gateway can use a public IP address, private IP address, or one of each type.**
+![image](https://user-images.githubusercontent.com/68102477/130338877-b5b4b0ba-3873-4bbe-972a-0f3d6778bf23.png)
+### BACKEND POOL 
+**A backend pool is a collection of resources to which your application gateway can send traffic. A backend pool can contain virtual machines, virtual machine scale sets, app services, IP addresses, or fully qualified domain names (FQDN).**
+### ROUTING RULES 
+**Configure a routing rule to send traffic from a given frontend IP address to one or more backend targets. A routing rule must contain a listener and at least one backend target.**
+![image](https://user-images.githubusercontent.com/68102477/130338981-0508c31e-476e-4e22-a3c3-89c52b4e7ea0.png)
+**Listner** 
+* A listener “listens” on a specified port and IP address for traffic that uses a specified protocol. If the listener criteria are met, the application gateway will apply this routing rule.
+* HTTPS - port 443
+* HTTP - PORT 80
+![image](https://user-images.githubusercontent.com/68102477/130338964-12ca02e1-e90d-4cd0-9cdc-066e0a782d19.png)
+**Backend Targets**
+ * Choose a backend pool to which this routing rule will send traffic. You will also need to specify a set of HTTP settings that define the behavior of the routing rule.
+![image](https://user-images.githubusercontent.com/68102477/130338979-40595f09-12eb-43b2-836d-f3dd898b5b36.png)
+
+## CREATE A VIRTUAL MACHINE INSIDE AN EXISTING VIRTUAL NETWORK
+* YOU HAVE TO SELECT THE REGION AS SAME AS VIRTUAL NETWORK
 
 
- 
 
 
-
-
-
+## CREATE A VIRTUAL MACHINE OUTSIDE EXISTING VNET. VIRTUAL MACHINE WILL BE DEPLOYED IN A NEW VNET.
+### Inbound port rules
+* Select which virtual machine network ports are accessible from the public internet. You can specify more limited or granular network access on the Networking tab.
+![image](https://user-images.githubusercontent.com/68102477/130339156-c762f98b-7f4c-4f74-a744-889a15eaa60b.png)
+### Network interface NIC
+Define network connectivity for your virtual machine by configuring network interface card (NIC) settings. You can control ports, inbound and outbound connectivity with security group rules, or place behind an existing load balancing solution.
+![image](https://user-images.githubusercontent.com/68102477/130339196-44c711ee-93e4-4cdd-84cf-5fabfb71709e.png)
+### Load balancing
+You can place this virtual machine in the backend pool of an existing Azure load balancing solution. 
+### You can either use MANAGED IDENTITY or AZURE AD 
+![image](https://user-images.githubusercontent.com/68102477/130339219-998f37aa-3476-4d81-a748-5db72fa0ba1e.png)
+![image](https://user-images.githubusercontent.com/68102477/130339261-5b4d4f40-1b73-4d46-b158-810fd9cf85dc.png)
 
 
 
