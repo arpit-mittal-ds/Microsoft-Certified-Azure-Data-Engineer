@@ -215,17 +215,6 @@ https://www.youtube.com/watch?v=apYOtRpmPH8
  * Choose a backend pool to which this routing rule will send traffic. You will also need to specify a set of HTTP settings that define the behavior of the routing rule.
 ![image](https://user-images.githubusercontent.com/68102477/130338979-40595f09-12eb-43b2-836d-f3dd898b5b36.png)
 
-## CREATE A VIRTUAL MACHINE INSIDE AN EXISTING VIRTUAL NETWORK
-* YOU HAVE TO SELECT THE REGION AS SAME AS VIRTUAL NETWORK
-* Use a public IP address if you want to communicate with the virtual machine from outside the virtual network.
-* A network security group contains security rules that allow or deny inbound network traffic to, or outbound network traffic from, the virtual machine. To simplify management of security rules, it's recommended that you associate a network security group to individual subnets, rather than individual network interfaces within the subnet, whenever possible.
-![image](https://user-images.githubusercontent.com/68102477/130347317-c7615263-b4f4-4be7-b890-2b1201e67848.png)
-* Subnet Options are for some reason disabled.........not able to add subnets for this VNet
-![image](https://user-images.githubusercontent.com/68102477/130347380-b7aa784b-45a7-4cd3-b59a-2375ec1a12a7.png)
-* Created a new subnet in same Virtual Network
-![image](https://user-images.githubusercontent.com/68102477/130347588-e2edd6d1-28c5-4407-a63e-ab1afae8b2d7.png)
-
-
 
 ## CREATE A VIRTUAL MACHINE OUTSIDE EXISTING VNET. VIRTUAL MACHINE WILL BE DEPLOYED IN A NEW VNET.
 ### Inbound port rules
@@ -240,6 +229,19 @@ You can place this virtual machine in the backend pool of an existing Azure load
 ![image](https://user-images.githubusercontent.com/68102477/130339219-998f37aa-3476-4d81-a748-5db72fa0ba1e.png)
 ![image](https://user-images.githubusercontent.com/68102477/130339261-5b4d4f40-1b73-4d46-b158-810fd9cf85dc.png)
 
+
+
+
+## CREATE A VIRTUAL MACHINE INSIDE AN EXISTING VIRTUAL NETWORK
+* YOU HAVE TO SELECT THE REGION AS SAME AS VIRTUAL NETWORK
+* Use a public IP address if you want to communicate with the virtual machine from outside the virtual network.
+* A network security group contains security rules that allow or deny inbound network traffic to, or outbound network traffic from, the virtual machine. To simplify management of security rules, it's recommended that you associate a network security group to individual subnets, rather than individual network interfaces within the subnet, whenever possible.
+![image](https://user-images.githubusercontent.com/68102477/130347317-c7615263-b4f4-4be7-b890-2b1201e67848.png)
+* Subnet Options are for some reason disabled.........not able to add subnets for this VNet
+![image](https://user-images.githubusercontent.com/68102477/130347380-b7aa784b-45a7-4cd3-b59a-2375ec1a12a7.png)
+* Created a new subnet in same Virtual Network
+![image](https://user-images.githubusercontent.com/68102477/130347588-e2edd6d1-28c5-4407-a63e-ab1afae8b2d7.png)
+![image](https://user-images.githubusercontent.com/68102477/130347656-74b51860-ab2a-492e-9e88-9bcb1692fd41.png)
 
 
 
