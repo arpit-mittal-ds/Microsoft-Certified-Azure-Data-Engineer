@@ -96,6 +96,9 @@ Connection. Create a Connection resource to create a logical connection between 
 Address space '10.0.0.0/16' overlaps with address space '10.0.0.0/16' of virtual network 'VNET1'. Virtual networks with overlapping address space cannot be peered. If you intend to peer these virtual networks, change address space '10.0.0.0/16'.
 Peered virtual network address space
 
+![image](https://user-images.githubusercontent.com/68102477/130348121-1f7b152c-bea6-4abd-a12d-6cfefc5bf04c.png)
+
+
 ![image](https://user-images.githubusercontent.com/68102477/130220641-51c923d7-c9be-4372-992d-6d6d516f66fd.png)
 
 
