@@ -348,3 +348,12 @@ Azure Resource Graph enables full visibility into your environments by providing
 ![image](https://user-images.githubusercontent.com/68102477/130213302-800ebbf3-4c1f-412b-9f11-bdc92a78f63b.png)
 ![image](https://user-images.githubusercontent.com/68102477/130213384-c599a39a-79ad-4a79-96b1-ded20be6ae73.png)
 
+
+## Managed Intity
+* managed identities enable Azure resources to authenticate to cloud services (e.g. Azure Key Vault) without storing credentials in code.
+
+### Example: Managed Identity of ADF Instance
+![image](https://user-images.githubusercontent.com/68102477/130422277-11daac91-615d-45e0-917d-cb670d7de637.png)
+
+
+
