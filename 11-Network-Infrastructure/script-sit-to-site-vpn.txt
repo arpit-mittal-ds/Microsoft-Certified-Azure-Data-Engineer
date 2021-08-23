@@ -91,6 +91,45 @@ False     False        False                              False                 
 
 
 
+PIPVNGAZUREVNET1=$(az network public-ip show --resource-group MyResourceGroup --name PIP-VNG-Azure-VNet-1 --query "[ipAddress]" --output tsv)
+	
+52.165.158.70
+
+az network local-gateway update --resource-group MyResourceGroup --name LNG-Azure-VNet-1 --gateway-ip-address 52.165.158.70
+	
+	
+PIPVNGHQNETWORK=$(az network public-ip show --resource-group MyResourceGroup --name PIP-VNG-HQ-Network --query "[ipAddress]" --output tsv)
+23.101.119.230
+	
+az network local-gateway update --resource-group MyResourceGroup --name LNG-HQ-Network --gateway-ip-address 23.101.119.230
+	
+Create the connections
+
+complete the configuration by creating the connections from each VPN gateway to the local network gateway that contains the public IP address references for that gateway's remote network.
+
+### Create the shared key to use for the connections. In the following command, replace <shared key>
+
+SHAREDKEY=12345678
+
+az network vpn-connection create--resource-group MyResourceGroup --name Azure-VNet-1-To-HQ-Network--vnet-gateway1 VNG-Azure-VNet-1 --shared-key 12345678 --local-gateway2 LNG-HQ-Network
+	
+	
+	
+az network vpn-connection create--resource-group MyResourceGroup--name HQ-Network-To-Azure-VNet-1 --vnet-gateway1 VNG-HQ-Network--shared-key 12345678 --local-gateway2 LNG-Azure-VNet-1
+	
+az network vpn-connection show--resource-group MyResourceGroup--name Azure-VNet-1-To-HQ-Network --output table--query '{Name:name,ConnectionStatus:connectionStatus}'
+	
+	
+	
+	
+az network vpn-connection create --resource-group MyResourceGroup --name Azure-VNet-1-To-HQ-Network --vnet-gateway1 VNG-Azure-VNet-1 --shared-key 12345678 --local-gateway2 LNG-HQ-Network
+	
+az network vpn-connection create --resource-group MyResourceGroup --name HQ-Network-To-Azure-VNet-1  --vnet-gateway1 VNG-HQ-Network --shared-key 12345678 --local-gateway2 LNG-Azure-VNet-1
+	
+az network vpn-connection show --resource-group MyResourceGroup --name Azure-VNet-1-To-HQ-Network  --output table --query '{Name:name,ConnectionStatus:connectionStatus}'
+
+
+
 
 
 
