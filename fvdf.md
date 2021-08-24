@@ -68,8 +68,12 @@ A self-hosted integration runtime can run copy activities between a cloud data s
 
 Azure Firewall is a managed cloud-based network security service that protects your Azure Virtual Network resources. It is a fully stateful firewall as a service with built-in high availability and unrestricted cloud scalability. You can centrally create, enforce, and log application and network connectivity policies across subscriptions and virtual networks. Azure Firewall uses a static public IP address for your virtual network resources allowing outside firewalls to identify traffic originating from your virtual network. The service is fully integrated with Azure Monitor for logging and analytics. 
 
+* Adding rules in Firewall
+![image](https://user-images.githubusercontent.com/68102477/130667175-a600e47f-f0cd-4fd8-a308-7191fd4761e5.png)
+* allowing access from subnet
+![image](https://user-images.githubusercontent.com/68102477/130667303-c2b4d74c-1b85-4f03-8a90-4ace101b11a2.png)
 
-
+![image](https://user-images.githubusercontent.com/68102477/130667479-64caf59e-1e42-4c07-aead-8eb5df9bb28b.png)
 
 
 
