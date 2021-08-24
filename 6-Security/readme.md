@@ -356,4 +356,16 @@ Azure Resource Graph enables full visibility into your environments by providing
 ![image](https://user-images.githubusercontent.com/68102477/130422277-11daac91-615d-45e0-917d-cb670d7de637.png)
 
 
+### Every Resource has IAM and Roles already created. We can assign users or groups any role of the resource.
+![image](https://user-images.githubusercontent.com/68102477/130602566-a63a96f8-5590-495b-a239-9e2b10caafd3.png)
+
+
+
+
+
+
+
+
+
+
 
