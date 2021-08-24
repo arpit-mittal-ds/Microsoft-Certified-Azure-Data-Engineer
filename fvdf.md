@@ -33,6 +33,50 @@ A self-hosted integration runtime can run copy activities between a cloud data s
 
 
 
+![image](https://user-images.githubusercontent.com/68102477/130556543-bf888db1-65c4-4ec5-879b-9f596249b0f1.png)
+
+
+
+
+
+![image](https://user-images.githubusercontent.com/68102477/130556633-b1512b07-21eb-4dfc-be43-4c9ec962f814.png)
+
+![image](https://user-images.githubusercontent.com/68102477/130556613-54c634ab-73d0-43d8-a80b-968f535218fb.png)
+
+### Azure Security Groups | Network and Application Security Groups (NSG, ASG)
+
+![image](https://user-images.githubusercontent.com/68102477/130558415-6cccc95d-c0b2-40a1-a256-3191c0211bfd.png)
+
+* Internet traffic should not be direclty reaching our database.
+* Not all services should be able to communicate with each other.
+* Create a NSG to block internet traffic to Database but allow internal traffic
+
+![image](https://user-images.githubusercontent.com/68102477/130558713-c14d553c-8a1d-4c07-83fa-592ddd9c7d6e.png)
+
+![image](https://user-images.githubusercontent.com/68102477/130561871-88f10512-9c35-4c11-b3cd-36c21f13478a.png)
+* Use  Azure Security Groups to further block traffic from Web Server to DB (Logic server is allowed to send traffic to DB)
+
+![image](https://user-images.githubusercontent.com/68102477/130561983-df439551-a335-4348-95b7-5f7414a7b0dd.png)
+
+![image](https://user-images.githubusercontent.com/68102477/130562155-fdf61321-2f84-4963-bfc0-d50b693d3c62.png)
+
+
+### Firewall
+
+* MONITORS AND CONTROLS
+![image](https://user-images.githubusercontent.com/68102477/130563562-c3cbb906-6f23-4e4f-8d59-90843690268f.png)
+
+Azure Firewall is a managed cloud-based network security service that protects your Azure Virtual Network resources. It is a fully stateful firewall as a service with built-in high availability and unrestricted cloud scalability. You can centrally create, enforce, and log application and network connectivity policies across subscriptions and virtual networks. Azure Firewall uses a static public IP address for your virtual network resources allowing outside firewalls to identify traffic originating from your virtual network. The service is fully integrated with Azure Monitor for logging and analytics. 
+
+
+
+
+
+
+
+
+
+
 
 
 
