@@ -247,8 +247,11 @@ You can place this virtual machine in the backend pool of an existing Azure load
 ![image](https://user-images.githubusercontent.com/68102477/130347656-74b51860-ab2a-492e-9e88-9bcb1692fd41.png)
 
 
+## [Reverse Proxy](https://www.nginx.com/resources/glossary/reverse-proxy-server/#:~:text=A%20reverse%20proxy%20server%20is,traffic%20between%20clients%20and%20servers.)
 
+A reverse proxy server is a type of proxy server that typically sits behind the firewall in a private network and directs client requests to the appropriate backend server. A reverse proxy provides an additional level of abstraction and control to ensure the smooth flow of network traffic between clients and servers.
 
+NGINX Plus and NGINX are the best-in-class load‑balancing solutions used by high‑traffic websites such as Dropbox, Netflix, and Zynga.
 
 
 
