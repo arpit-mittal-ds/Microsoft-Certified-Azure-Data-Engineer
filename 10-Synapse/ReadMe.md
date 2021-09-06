@@ -220,8 +220,8 @@ WORKLOAD MANAGEMENT -
 ![image](https://user-images.githubusercontent.com/68102477/132181430-5ea655e9-5af6-4a50-8783-5b66dc4e3ac9.png)
 
 ### GET THE EXPLAIN PLAN OF THE QUERY
+![image](https://user-images.githubusercontent.com/68102477/132183783-33dcdcd9-545b-4a04-b838-1731fc292b41.png)
 
-![image](https://user-images.githubusercontent.com/68102477/128813255-d50ae3f1-277a-4cc6-b1b1-c89bb33388ef.png)
 
 ### PASTE THE EXPLAIN PLAN IN THE NEW XML FILE
 
@@ -247,8 +247,6 @@ WORKLOAD MANAGEMENT -
 ![image](https://user-images.githubusercontent.com/68102477/128814133-2f7bf4d6-62d9-4258-b5f9-d781aa1720dc.png)
 
 ### BROADCAST_MOVE HAS NOW 
-![image](https://user-images.githubusercontent.com/68102477/128813978-7bd99ced-7a5d-4a2b-aa79-fb4c9e698a7e.png)
-
 ### THE 2 TBALES ARE ROUND ROBIN
 ### DATBASE IS HENCE SHUFFLING FOR THE JOIN
 ### LET'S REDISTRIBUTE AND USE HASH DISTRIBUTION
