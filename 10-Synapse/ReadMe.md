@@ -195,7 +195,8 @@ WORKLOAD MANAGEMENT -
 
 ### SHUFFLE AND BROADCAST HAPPENING ON REPLICATED TABLES - SHOULD NEVER HAPPEN
 
-![image](https://user-images.githubusercontent.com/68102477/128811950-f4e7bf80-4289-49f5-9891-b714656e7cbd.png)
+![image](https://user-images.githubusercontent.com/68102477/132181269-889f35e7-a808-48d2-b085-531988e2f8fd.png)
+
 
 ### ROUND ROBIN 
 
@@ -214,9 +215,9 @@ WORKLOAD MANAGEMENT -
 ![image](https://user-images.githubusercontent.com/68102477/128812445-9d0b6e97-c6a4-4175-9304-5732297759ce.png)
 
 ### LABEL = TO GET THE PARTICULAR QUERY EXPLAIN PLAN
-![image](https://user-images.githubusercontent.com/68102477/128812863-5015074b-3f8e-423b-b6c6-2cc585e96323.png)
+![image](https://user-images.githubusercontent.com/68102477/132181369-eda11546-b69f-4b7e-9c33-cf0798a66e53.png)
 
-![image](https://user-images.githubusercontent.com/68102477/128813117-f71fe208-a515-43d9-b77b-7d60e5e47b81.png)
+![image](https://user-images.githubusercontent.com/68102477/132181430-5ea655e9-5af6-4a50-8783-5b66dc4e3ac9.png)
 
 ### GET THE EXPLAIN PLAN OF THE QUERY
 
@@ -232,7 +233,9 @@ WORKLOAD MANAGEMENT -
 ### BROADCAST VS SHUFFLE - BOTH ARE BAD FOR PERFORMANCE
 ### SHUFFLE - TAKE THE RECORD AND MOVE IT TO ANOTHER NODE
 ### BROADCAST_MOVE - CAUSE - DATATYPES OF THE COLUMNS DO NOT MATCH IN THE JOIN/COMPARISON CONDITION (REQUIRES CONVERSION) OR REPLICATION HAS NOT YET HAPPENED 
-![image](https://user-images.githubusercontent.com/68102477/128813500-9cbed675-fc98-4ea1-8877-2743fca32b2e.png)
+
+![image](https://user-images.githubusercontent.com/68102477/132181526-92921844-6cab-40b0-a855-5d85147bcf5d.png)
+
 
 ### WE WERE JOINING MEDALLION AND TRIP TABLES
 ### WE CAN NOTICE THAT THE DATATYPE OF THE COLUMNS ON WHICH WE ARE JOINING (HENCE COMPARING) TABLES, IS NOT SAME.
