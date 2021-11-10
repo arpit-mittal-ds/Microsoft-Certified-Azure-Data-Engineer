@@ -11,14 +11,22 @@
 ## 2. DEMO - SYNPASE STUDIO
 
 ![image](https://user-images.githubusercontent.com/68102477/141209399-b943d24c-ba6f-4ec9-a17c-52306fa6532a.png)
-### SAMPLE DATASETS, SAMPLE NOTEBOOKS AND SAMPLE SQL SCRIPTS AND TEMPLATE PIPELINES
+### [SAMPLE DATASETS, SAMPLE NOTEBOOKS AND SAMPLE SQL SCRIPTS AND TEMPLATE PIPELINES](https://azure.microsoft.com/en-au/blog/quickly-get-started-with-samples-in-azure-synapse-analytics/)
 ![image](https://user-images.githubusercontent.com/68102477/141209461-36a2b441-95c4-4bf0-ad21-2c40e2a6ec32.png)
 ### Synapse Studio divided into Activity hubs - DATA, DEVELOP, INTEGRATE, MANAGE, MONITOR
 * These organize the tasks needed for building analytics solution.
 ![image](https://user-images.githubusercontent.com/68102477/141209544-cbb0759f-116e-4c6d-b7ad-e684dcd0d47c.png)
 ![image](https://user-images.githubusercontent.com/68102477/141209579-2d1b5f3e-6fc7-4aa2-b79f-d1e2f6b2d307.png)
 
+## 3. DATA WAREHOUSING
+![image](https://user-images.githubusercontent.com/68102477/141210313-a3f8efae-af9b-4bdb-b768-03d930c79f28.png)
+### NEWER OPTIONS
+* SYNAPSE PIPELINES - WHEN WANT TO USE ONLY AZURE COMPONENTS VS ADF - WHEN USING OTHER STORAGE COMPONENTS
+![image](https://user-images.githubusercontent.com/68102477/141210665-f8933373-022a-4429-a987-b530b411352b.png)
+### DEMO
 
+
+## 4. Module II - Dedicated SQL Pools
 
 
 
