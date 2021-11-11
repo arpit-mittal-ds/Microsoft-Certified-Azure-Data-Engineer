@@ -35,9 +35,12 @@
 ![image](https://user-images.githubusercontent.com/68102477/141213671-6206e68e-0bc1-4198-82bd-2ba02d6c5488.png)
 ![image](https://user-images.githubusercontent.com/68102477/141213815-c146ea56-cf5e-4468-9255-b6ec961b86c2.png)
 
+## 5. Data Loadin Synapse
+![image](https://user-images.githubusercontent.com/68102477/141214969-5768b613-610f-427c-a3fd-bfe30c0e1751.png)
+### Demo:
 
 
-
+## 6 . Optimize data warehouse query performance in Azure Synapse Dedicated SQL Pools
 
 
 
