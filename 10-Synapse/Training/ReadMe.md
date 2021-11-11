@@ -27,6 +27,13 @@
 
 
 ## 4. Module II - Dedicated SQL Pools
+![image](https://user-images.githubusercontent.com/68102477/141213245-92a43178-b653-42fd-af50-a2d0e9f5bbbe.png)
+![image](https://user-images.githubusercontent.com/68102477/141213359-6b607a97-1ae4-42fe-ba63-9851b12742cf.png)
+![image](https://user-images.githubusercontent.com/68102477/141213397-68a2cae5-a07a-4ad2-8a33-55cbf034472e.png)
+![image](https://user-images.githubusercontent.com/68102477/141213572-9dfcb807-b743-4638-b1b0-e21cd5dd1c27.png)
+![image](https://user-images.githubusercontent.com/68102477/141213648-79f22645-a82a-4834-aad3-edd38875e8a8.png)
+![image](https://user-images.githubusercontent.com/68102477/141213671-6206e68e-0bc1-4198-82bd-2ba02d6c5488.png)
+![image](https://user-images.githubusercontent.com/68102477/141213815-c146ea56-cf5e-4468-9255-b6ec961b86c2.png)
 
 
 
