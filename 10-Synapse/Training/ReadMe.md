@@ -42,6 +42,71 @@
 
 ## 6 . Optimize data warehouse query performance in Azure Synapse Dedicated SQL Pools
 
+# BASICS:
+Azure SQL Database (and traditional versions of SQL Server) utilizes computers based on the SMP model.  Ultimately, this means that **SQL Server is installed on a single computer/server that may (and probably does) have multiple CPU’s and cores and therefore permits parallel processing.**  However, there is only one database that is doing all the work to support requests.
+
+The data warehouse provided in Azure Synapse Analytics (and its’ antecedents) is built on a Massively Parallel Processing architecture.  In this case, **multiple computers/servers (referred to as nodes) with dedicated processors are deployed, all with SQL Server installed.**
+
+Each instance has its own processors, memory, and dedicated storage.  One node in this scenario is the control node.  The purpose of the control node is to distribute requests to worker nodes.  The worker nodes do all work that can be done locally and report the results to the control node.  The control node then performs any additional work on the combined results from all worker nodes and reports the results to the requestor.
+
+![image](https://user-images.githubusercontent.com/68102477/141606440-f278a15b-f316-48c6-ae35-91ef99572aa8.png)
+![image](https://user-images.githubusercontent.com/68102477/141606446-a8479ce5-fc58-4dab-a86d-c982495147ec.png)
+
+##  Central to the MPP architecture is the shard.  What is a shard? 
+
+SHARD is one of the SQL compute nodes and its associated blob storage, referred to above as a worker node.  Shards are horizontal partitions of data.  It is possible that some data exists on all shards, but the typical usage is for a shard to own a subset of the overall data.  Every shard is held on one database server.  Each shard acts as the single source for a subset of data, determined by the distribution chosen.
+
+
+There are different design considerations as well as limitations in t-SQL in MPP compared to SMP
+
+
+## Referential integrity constraints cannot be applied in the Synapse Analytics data warehouse due to their being:
+
+* No primary keys
+* No foreign keys
+* No unique constraints
+
+There are probably several reasons for this, but they likely center on performance considerations, particularly if enforcement requires the database to visit other shards to determine if there is a violation.  If uniqueness or existence must be enforced, then it must be done in code.
+
+
+## Distributions
+The distribution of a table in an MPP architecture defines **how data will be distributed among the shards.**  While this can be considered a partitioning of the data, it is not the same as the partitioning of data that SQL Server supports.  Synapse Analytics also supports that method of partitioning. Three methods are available for defining the distribution of data in a shard of a table:
+
+* ROUND_ROBIN
+* HASH(column)
+* REPLICATE
+
+### ROUND_ROBIN
+As the name suggests, the control node distributes data sequentially through the shards.  By definition, data is well distributed among each of the worker nodes. 
+
+### REPLICATE
+For a distribution that is set to REPLICATE, a copy of the data is retained on every shard.  This is generally most applicable to reference tables where the data is ‘small’.  Movement of data to the shards to satisfy join lookups is avoided unless the looked-up data is modified.  Data in a replicated table is maintained on the control node and copied as needed to the individual shards.
+
+###  cHASH({column})
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
