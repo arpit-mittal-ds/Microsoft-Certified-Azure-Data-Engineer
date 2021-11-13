@@ -82,8 +82,20 @@ As the name suggests, the control node distributes data sequentially through the
 ### REPLICATE
 For a distribution that is set to REPLICATE, a copy of the data is retained on every shard.  This is generally most applicable to reference tables where the data is ‘small’.  Movement of data to the shards to satisfy join lookups is avoided unless the looked-up data is modified.  Data in a replicated table is maintained on the control node and copied as needed to the individual shards.
 
-###  cHASH({column})
+###  HASH({column})
 
+In the HASH distribution, the data is organized among the shards based on a hashed value of the column passed as a parameter to the hash function.  Only one column may be used in the HASH() function.   There are many considerations when choosing the column to hash.  The choice should allow as many operations as possible to be pushed to the individual shards such that they can be performed in parallel.  
+
+Indexing
+Indexing for a sharded database generally follows the rules one would apply to a traditional database with a few exceptions.  A table should be expected to contain at least 1 million records per shard for a clustered columnstore index to be effective.  For most Synapse Analytics data warehouses that means 60 million records.  Otherwise, a heap should be chosen.  Ordinary indexes, clustered and nonclustered may be defined.  Unique indexes are not permitted. 
+
+One can easily convert between a clustered columnstore index and a heap using the normal CREATE and DROP statements.  If one desires a clustered columnstore index that is named according to a naming convention, the table must be created as a heap and then converted to a clustered columnstore index
+
+Distribution Check
+The distribution of data in a table that is hashed on a column can be checked as follows:
+
+DBCC PDW_SHOWSPACEUSED(‘table_name’);
+It may be determined that the distribution of records is inadequate.  Alternatives can be quickly compared by generating additional versions of the table in question using CTAS (CREATE TABLE AS SELECT) to create tables with differing distributions.
 
 
 
