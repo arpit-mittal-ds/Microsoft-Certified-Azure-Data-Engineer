@@ -100,9 +100,15 @@ It may be determined that the distribution of records is inadequate.  Alternativ
 
 
 
+https://cloudworkshop.blob.core.windows.net/azure-synapse-analytics-end-to-end-solution/Hands-on%20lab/HOL%20step-by%20step%20-%20Azure%20Synapse%20Analytics%20and%20AI.html
 
+https://techcommunity.microsoft.com/t5/microsoft-learn/new-microsoft-learn-content-all-about-azure-synapse-analytics/m-p/1953762
 
+https://azure.microsoft.com/en-us/services/synapse-analytics/video-demos/
 
+https://www.microsoft.com/en-au/business/learn/cloud-training-events/
+
+https://docs.microsoft.com/en-gb/learn/roles/data-engineer
 
 
 
